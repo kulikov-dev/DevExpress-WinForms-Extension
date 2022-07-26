@@ -38,7 +38,7 @@ namespace DevExpressWinFormsExtension.DataControls.Editors
         }
 
         /// <summary>
-        /// Inveret selection
+        /// Inverse checkings
         /// </summary>
         private void InvertSelection()
         {
