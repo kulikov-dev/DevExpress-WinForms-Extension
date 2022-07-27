@@ -8,5 +8,6 @@
 * DateDoubleTrackbarControlDev. The visual component, which allows users to select range of dates: start, end and date between them. <p align="center"> <img src="DevExpressWinFormsExtension/Resources/Samples/DateDoubleTrackBarSample.jpg" width="230" align="center" title="Screenshot of the DateDoubleTrackbarControl"> </p>
 * PasswordTextEditDev. The extension for working with passwords, allows user to show/hide input characters. <p align="center"> <img src="DevExpressWinFormsExtension/Resources/Samples/PasswordTextEditSample.jpg" width="150" align="center" title="Screenshot of the PasswordTextEdit"> </p>
 * InputBoxValidableDev. The extension for working with passwords, allows user to show/hide input characters. <p align="center"> <img src="DevExpressWinFormsExtension/Resources/Samples/InputBoxValidableSample.jpg" width="250" align="center" title="Screenshot of the PasswordTextEdit"> </p>
+* LookUpDev, RepositoryItemLookUpDev. The extension that allows to show hint for each element in the editor.
 
 #### LookUpDev
