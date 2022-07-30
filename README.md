@@ -14,3 +14,6 @@
 #### Extensions
 * BaseEditExtension. Contains method 'IsValueEmpty' which allows validating input data of each BaseEdit control for emptiness. If necessary, set up the background color of the control to warning color.
 * DateEditExtension. Contains method 'UpdateView' for DateEdit and RepositoryItemDateEdit to initialize the view of the control according to the datetime interval type. 
+
+### Utils
+* SkinHelper. Utils to work with colors considering the App Theme.
