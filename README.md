@@ -11,4 +11,6 @@
 * GroupControlCheckedDev. TGroupControl with checkbox in header, allows user to disable/enable all controls in the GroupControl. <p align="center"> <img src="DevExpressWinFormsExtension/Resources/Samples/GroupControlCheckedSample.jpg" width="250" align="center" title="Screenshot of the GroupControlChecked"> </p>
 * LookUpDev, RepositoryItemLookUpDev. The extension that allows to show hint for each element in the editor. <p align="center"> <img src="DevExpressWinFormsExtension/Resources/Samples/LookUpSample.jpg" width="320" align="center" title="Screenshot of the GroupControlChecked"> </p>
 
-#### LookUpDev
+#### Extensions
+* BaseEditExtension. Contains method 'IsValueEmpty' which allows validating input data of each BaseEdit control for emptiness. If necessary, set up the background color of the control to warning color.
+* DateEditExtension. Contains method 'UpdateView' for DateEdit and RepositoryItemDateEdit to initialize the view of the control according to the datetime interval type. 
