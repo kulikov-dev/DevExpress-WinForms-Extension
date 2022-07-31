@@ -7,6 +7,7 @@ using System.Drawing;
 using DevExpress.XtraEditors;
 using DevExpressWinFormsExtension.Utils;
 using DevExpressWinFormsExtension.Interfaces;
+using DevExpressWinFormsExtension.DataControls.Forms;
 
 namespace DevExpressWinFormsExtension.DataControls
 {
@@ -16,7 +17,7 @@ namespace DevExpressWinFormsExtension.DataControls
     [ToolboxItem(true)]
     [ToolboxBitmap(typeof(TextEdit))]
     [Description("InputBox with possibility of using custom function for user input validation.")]
-    public partial class InputBoxValidableDev : XtraUserControl, IValidable
+    public partial class InputBoxValidableDev : XtraUserControlDev, IValidable
     {
         /// <summary>
         /// Custom function of user input validation

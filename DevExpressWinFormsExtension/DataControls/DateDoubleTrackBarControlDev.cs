@@ -6,6 +6,7 @@ using System.Windows.Forms;
 using DevExpress.Skins;
 using DevExpress.Utils.Drawing;
 using DevExpress.XtraEditors;
+using DevExpressWinFormsExtension.DataControls.Forms;
 
 namespace DevExpressWinFormsExtension.DataControls
 {
@@ -15,7 +16,7 @@ namespace DevExpressWinFormsExtension.DataControls
     [ToolboxItem(true)]
     [ToolboxBitmap(typeof(RangeControl))]
     [Description("The visual component, which allows users to select range of dates: start, end and date between them.")]
-    public partial class DateDoubleTrackBarControlDev : XtraUserControl
+    public partial class DateDoubleTrackBarControlDev : XtraUserControlDev
     {
         #region Field's
 

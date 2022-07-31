@@ -23,6 +23,8 @@
 * DateEditExtension. Contains method 'UpdateView' for DateEdit and RepositoryItemDateEdit to initialize the view of the control according to the datetime interval type. 
 * TreeListNodeExtension. Contains methods for correct processing of CheckState and Filtering for situations, when checkstate of the parent node depends on children and vice versa.
 * ChartControlExtension. Contains method 'ColorizeSameColoredSeries', allowing to change the hue for series with the same color.
-
+* EnumExtension. Useful methods to work with enums:
+  1. Allows to get caption/enum-value by DescriptionAttribute;
+  2. Fill different DevExpress editors with enum values.
 ### Utils
 * SkinHelper. Utils to work with colors considering the App Theme.
