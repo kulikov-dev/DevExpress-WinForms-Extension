@@ -2,6 +2,8 @@
   A small library to solve some troubles, which I met during my work with DevExpress.
 
 ### List of components
+#### Forms
+* XtraFormDev, XtraUserControlDev. The extensions which supports the update mechanism (Begin/EndUpdate to prevent visual/data changes during updating).
 #### Editors
 * CheckedListBoxControlDev. The extension for the standard component supports hotkeys for fast check/uncheck of items: check/uncheck all, invert check state.
 * ColorPickEditDev, RepositoryItemColorPickEdit. The extensions for the standard components allows to save custom user colors during the program, so each ColorPickEdit and RepositoryItemColorPickEdit will have the same, actual user colors.

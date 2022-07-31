@@ -16,7 +16,7 @@ namespace DevExpressWinFormsExtension.DataControls
     [ToolboxItem(true)]
     [ToolboxBitmap(typeof(TextEdit))]
     [Description("InputBox with possibility of using custom function for user input validation.")]
-    public partial class InputBoxValidableDev : UserControlDev, IValidable
+    public partial class InputBoxValidableDev : XtraUserControl, IValidable
     {
         /// <summary>
         /// Custom function of user input validation

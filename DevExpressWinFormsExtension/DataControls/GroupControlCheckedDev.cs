@@ -16,7 +16,7 @@ namespace DevExpressWinFormsExtension.DataControls
     [Description("GroupControl with checkbox in header.")]
     [ToolboxBitmap(typeof(GroupControl))]
     [Designer(typeof(ParentControlDesigner))]
-    public partial class GroupControlCheckedDev : UserControlDev
+    public partial class GroupControlCheckedDev : XtraUserControl
     {
         /// <summary>
         /// Parameterless constructor

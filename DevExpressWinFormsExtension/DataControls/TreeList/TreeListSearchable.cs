@@ -14,7 +14,7 @@ namespace DevExpressWinFormsExtension.DataControls.TreeList
     [ToolboxBitmap(typeof(DevExpress.XtraTreeList.TreeList))]
     [Designer(typeof(TreeListSearchableDesigner))]
     [Description("TreeList with filtration panel on top")]
-    public partial class TreeListSearchable : UserControlDev
+    public partial class TreeListSearchable : XtraUserControl
     {
         /// <summary>
         /// Custom function for filtration

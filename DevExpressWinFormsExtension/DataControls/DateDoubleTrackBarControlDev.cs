@@ -15,7 +15,7 @@ namespace DevExpressWinFormsExtension.DataControls
     [ToolboxItem(true)]
     [ToolboxBitmap(typeof(RangeControl))]
     [Description("The visual component, which allows users to select range of dates: start, end and date between them.")]
-    public partial class DateDoubleTrackBarControlDev : UserControlDev
+    public partial class DateDoubleTrackBarControlDev : XtraUserControl
     {
         #region Field's
 
