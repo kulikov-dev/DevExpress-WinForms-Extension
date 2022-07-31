@@ -26,5 +26,17 @@
 * EnumExtension. Useful methods to work with enums:
   1. Allows to get caption/enum-value by DescriptionAttribute;
   2. Fill different DevExpress editors with enum values.
+  ``` csharp
+      public enum TestEnum
+    {
+        [Description("Show angles on the map")]
+        Angles,
+
+        [Description("Show axis on the graph")]
+        Axis
+    }
+    
+    var caption = TestEnum.Angles.GetCaption();
+  ```
 ### Utils
 * SkinHelper. Utils to work with colors considering the App Theme.
