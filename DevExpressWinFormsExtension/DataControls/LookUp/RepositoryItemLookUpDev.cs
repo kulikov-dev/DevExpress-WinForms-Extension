@@ -12,7 +12,7 @@ namespace DevExpressWinFormsExtension.DataControls.LookUp
     /// </summary>
     /// <remarks> Allows to show hint for each element in the editor </remarks>
     [ToolboxItem(false)]
-    [UserRepositoryItem("RegisterTogiLookUp")]
+    [UserRepositoryItem("RepositoryItemLookUpDev")]
     public class RepositoryItemLookUpDev : RepositoryItemLookUpEdit
     {
         /// <summary>

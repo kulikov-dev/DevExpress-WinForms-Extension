@@ -4,7 +4,7 @@ using DevExpress.XtraEditors.Drawing;
 using System.ComponentModel;
 using System.Drawing;
 
-namespace DevExpressWinFormsExtension.DataControls.Editors
+namespace DevExpressWinFormsExtension.DataControls
 {
     /// <summary>
     /// The extension for working with passwords, allows user to show/hide input characters.

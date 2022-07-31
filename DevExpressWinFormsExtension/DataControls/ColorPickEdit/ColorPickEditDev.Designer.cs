@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel;
 
-namespace DevExpressWinFormsExtension.DataControls.Editors.ColorPickEdit
+namespace DevExpressWinFormsExtension.DataControls.ColorPickEdit
 {
     partial class ColorPickEditDev
     {

@@ -3,7 +3,7 @@ using DevExpress.Skins;
 using System.Collections.Generic;
 using System.Drawing;
 
-namespace DevExpressWinFormsExtension.Helpers
+namespace DevExpressWinFormsExtension.Utils
 {
     /// <summary>
     /// Utils to work with colors considering the App Theme.

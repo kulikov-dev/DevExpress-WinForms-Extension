@@ -3,7 +3,7 @@ using DevExpress.XtraEditors.Popup;
 using System;
 using System.Reflection;
 
-namespace DevExpressWinFormsExtension.DataControls.Editors.ColorPickEdit
+namespace DevExpressWinFormsExtension.DataControls.ColorPickEdit
 {
     /// <summary>
     /// RepositoryItemColorPickEdit component

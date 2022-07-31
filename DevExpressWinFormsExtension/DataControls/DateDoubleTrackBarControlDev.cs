@@ -7,7 +7,7 @@ using DevExpress.Skins;
 using DevExpress.Utils.Drawing;
 using DevExpress.XtraEditors;
 
-namespace DevExpressWinFormsExtension.DataControls.Editors
+namespace DevExpressWinFormsExtension.DataControls
 {
     /// <summary>
     /// The visual component, which allows users to select range of dates: start, end and date between them.

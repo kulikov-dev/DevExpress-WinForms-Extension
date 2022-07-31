@@ -3,11 +3,12 @@ using DevExpress.XtraEditors.Controls;
 using System;
 using System.ComponentModel;
 using System.Windows.Forms;
-using DevExpressWinFormsExtension.Helpers;
 using System.Drawing;
 using DevExpress.XtraEditors;
+using DevExpressWinFormsExtension.Utils;
+using DevExpressWinFormsExtension.Interfaces;
 
-namespace DevExpressWinFormsExtension.DataControls.Editors
+namespace DevExpressWinFormsExtension.DataControls
 {
     /// <summary>
     /// InputBox with possibility of using custom function for user input validation

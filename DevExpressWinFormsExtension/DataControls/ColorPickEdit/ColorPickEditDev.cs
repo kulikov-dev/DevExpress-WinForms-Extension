@@ -4,7 +4,7 @@ using System.ComponentModel;
 using System.Drawing;
 using System.Reflection;
 
-namespace DevExpressWinFormsExtension.DataControls.Editors.ColorPickEdit
+namespace DevExpressWinFormsExtension.DataControls.ColorPickEdit
 {
     /// <summary>
     /// ColorPickEdit component

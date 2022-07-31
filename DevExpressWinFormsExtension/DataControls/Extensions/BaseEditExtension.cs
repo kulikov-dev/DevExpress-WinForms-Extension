@@ -1,6 +1,6 @@
 ﻿using DevExpress.XtraEditors;
 using System;
-using DevExpressWinFormsExtension.Helpers;
+using DevExpressWinFormsExtension.Utils;
 
 namespace DevExpressWinFormsExtension.DataControls.Extensions
 {

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Drawing;
 
-namespace DevExpressWinFormsExtension.DataControls.Editors.ColorPickEdit
+namespace DevExpressWinFormsExtension.DataControls.ColorPickEdit
 {
     /// <summary>
     /// Utils for ColorPickUpEdit components

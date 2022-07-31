@@ -1,4 +1,4 @@
-﻿namespace DevExpressWinFormsExtension.DataControls.Editors
+﻿namespace DevExpressWinFormsExtension.DataControls
 {
     partial class InputBoxValidableDev
     {
