@@ -1,7 +1,7 @@
 ﻿using DevExpress.XtraTreeList.ViewInfo;
 using System.Drawing;
 
-namespace DevExpressWinFormsExtension.DataControls.TreeList
+namespace DevExpressWinFormsExtension.DataControls.TreeList.Utils
 {
     /// <summary>
     /// Custom TreeListViewInfo
@@ -33,7 +33,7 @@ namespace DevExpressWinFormsExtension.DataControls.TreeList
         protected override void CalcSelectImageBounds(RowInfo rInfo, Rectangle indentBounds)
         {
             base.CalcSelectImageBounds(rInfo, indentBounds);
-            if (-1 == rInfo.Node.SelectImageIndex && (!HasNodeImageInTag || rInfo.Node.Tag != null))
+            if (rInfo.StateImageIndex == -1 && (!HasNodeImageInTag || rInfo.Node.Tag != null))
             {
                 rInfo.SelectImageBounds = Rectangle.Empty;
             }
@@ -47,7 +47,7 @@ namespace DevExpressWinFormsExtension.DataControls.TreeList
         protected override void CalcStateImageBounds(RowInfo rInfo, Rectangle indentBounds)
         {
             base.CalcStateImageBounds(rInfo, indentBounds);
-            if (-1 == rInfo.StateImageIndex && (!HasNodeImageInTag || rInfo.Node.Tag != null))
+            if (rInfo.StateImageIndex == - 1 && (!HasNodeImageInTag || rInfo.Node.Tag != null))
             {
                 rInfo.StateImageBounds = Rectangle.Empty;
             }

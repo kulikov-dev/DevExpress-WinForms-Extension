@@ -2,9 +2,9 @@
 using DevExpress.XtraEditors.Controls;
 using System;
 using System.ComponentModel;
-using System.ComponentModel.Design;
 using System.Drawing;
 using System.Windows.Forms;
+using System.Windows.Forms.Design;
 
 namespace DevExpressWinFormsExtension.DataControls
 {
@@ -15,7 +15,7 @@ namespace DevExpressWinFormsExtension.DataControls
     [ToolboxItem(true)]
     [Description("GroupControl with checkbox in header.")]
     [ToolboxBitmap(typeof(GroupControl))]
-    [Designer("System.Windows.Forms.Design.ParentControlDesigner, System.Design", typeof(IDesigner))]
+    [Designer(typeof(ParentControlDesigner))]
     public partial class GroupControlCheckedDev : UserControlDev
     {
         /// <summary>

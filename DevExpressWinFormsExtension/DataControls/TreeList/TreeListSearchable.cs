@@ -1,7 +1,9 @@
 ﻿using DevExpress.XtraEditors.Controls;
+using DevExpressWinFormsExtension.DataControls.TreeList.Utils;
 using System;
 using System.ComponentModel;
 using System.Drawing;
+using System.Windows.Forms.Design;
 
 namespace DevExpressWinFormsExtension.DataControls.TreeList
 {
@@ -10,6 +12,7 @@ namespace DevExpressWinFormsExtension.DataControls.TreeList
     /// </summary>
     [ToolboxItem(true)]
     [ToolboxBitmap(typeof(DevExpress.XtraTreeList.TreeList))]
+    [Designer(typeof(TreeListSearchableDesigner))]
     [Description("TreeList with filtration panel on top")]
     public partial class TreeListSearchable : UserControlDev
     {

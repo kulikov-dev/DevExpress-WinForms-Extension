@@ -4,7 +4,7 @@ using DevExpress.XtraEditors.Repository;
 namespace DevExpressWinFormsExtension.DataControls.Extensions
 {
     /// <summary>
-    /// Extension for DateEdit component
+    /// Extension for the DateEdit component
     /// </summary>
     public static class DateEditExtension
     {

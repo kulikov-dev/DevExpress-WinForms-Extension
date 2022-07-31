@@ -1,12 +1,13 @@
 ﻿using System.ComponentModel;
 using System.Drawing;
-using System.Linq;
 using System.Windows.Forms;
+using System.Windows.Forms.Design;
 using DevExpress.Utils.Extensions;
 using DevExpress.XtraTreeList;
 using DevExpress.XtraTreeList.Nodes;
 using DevExpress.XtraTreeList.ViewInfo;
 using DevExpressWinFormsExtension.DataControls.Extensions;
+using DevExpressWinFormsExtension.DataControls.TreeList.Utils;
 
 namespace DevExpressWinFormsExtension.DataControls.TreeList
 {
@@ -16,6 +17,7 @@ namespace DevExpressWinFormsExtension.DataControls.TreeList
     /// <remarks> The extension for the standard component supports hotkeys for fast check/uncheck of items. Ctrl+A: check all, Ctrl+D: uncheck all, Ctrl+I: invert checking. </remarks>
     [ToolboxItem(true)]
     [ToolboxBitmap(typeof(DevExpress.XtraTreeList.TreeList))]
+    [Designer(typeof(ParentControlDesigner))]
     [Description("TreeList")]
     public class TreeListDev : DevExpress.XtraTreeList.TreeList
     {
