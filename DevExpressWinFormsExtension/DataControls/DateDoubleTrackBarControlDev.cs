@@ -713,7 +713,7 @@ namespace DevExpressWinFormsExtension.DataControls
                 return drawedArea;
             }
 
-            graphics.DrawString(title, Font, CommonBrushes.GetBrushByColor(ForeColor), tickPoint);
+            graphics.DrawString(title, Font, SolidBrushesCache.GetBrushByColor(ForeColor), tickPoint);
             return RectangleF.Union(drawedArea, area);
         }
 
