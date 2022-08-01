@@ -18,6 +18,13 @@
   3. Set up correct checkState for TreeList with multiselection option;
   4. Set up correct checkState for children/parent nodes according to their parent/children checkStates;
   5. Optional filtration panel on top. <p align="center"> <img src="DevExpressWinFormsExtension/Resources/Samples/TreeListSearchableSample.jpg" width="200" align="center" title="Screenshot of the InputBoxValidable"> </p>
+* GridView/BandedGridView extensions:
+  1. Allows merging a Column and a Band header panel;
+  2. Improvement of 'BestFitColumns' to use width of band's title, not only columns;
+  3. Improvements to work with merged cells: correct odd/even color, applying user changes to merged cells;
+  4. Correct multiple checked changes for 'bool' columns with multiple selected rows;
+  5. Cache for FormatRules;
+  6. Custom user column header colorizing.
 #### Extensions
 * BaseEditExtension. Contains method 'IsValueEmpty' which allows validating input data of each BaseEdit control for emptiness. If necessary, set up the background color of the control to warning color.
 * DateEditExtension. Contains method 'UpdateView' for DateEdit and RepositoryItemDateEdit to initialize the view of the control according to the datetime interval type. 
