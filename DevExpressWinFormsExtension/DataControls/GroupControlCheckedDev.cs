@@ -44,6 +44,7 @@ namespace DevExpressWinFormsExtension.DataControls
         /// <summary>
         /// GroupBox title
         /// </summary>
+        [Browsable(true)]
         [Category("Appearance")]
         [Description("GroupBox title")]
         public string Title
@@ -62,6 +63,7 @@ namespace DevExpressWinFormsExtension.DataControls
         /// <summary>
         /// CheckBox state
         /// </summary>
+        [Browsable(true)]
         [Category("Appearance")]
         [Description("CheckBox state")]
         public bool Checked
@@ -80,6 +82,7 @@ namespace DevExpressWinFormsExtension.DataControls
         /// <summary>
         /// CheckBox style
         /// </summary>
+        [Browsable(true)]
         [Category("Appearance")]
         [Description("CheckBox style")]
         public CheckBoxStyle CheckStyle

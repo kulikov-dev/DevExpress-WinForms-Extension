@@ -15,7 +15,7 @@ namespace DevExpressWinFormsExtension.DataControls.Extensions
         /// <param name="editor"> Editor </param>
         /// <param name="setWarningColor"> Flag, if need to set warning back color on empty value </param>
         /// <returns> True, if value empty </returns>
-        public static bool IsValueEmpty(this BaseEdit editor, bool setWarningColor = true)
+        public static bool IsValueEmpty(this BaseEdit editor, bool setWarningColor = false)
         {
             bool isValid;
             if (editor is TextEdit && !(editor is PopupContainerEdit))
