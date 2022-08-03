@@ -8,6 +8,7 @@ using DevExpress.XtraEditors;
 using DevExpressWinFormsExtension.Utils;
 using DevExpressWinFormsExtension.Interfaces;
 using DevExpressWinFormsExtension.DataControls.Forms;
+using DevExpressWinFormsExtension.DataControls.Forms.Utils;
 
 namespace DevExpressWinFormsExtension.DataControls
 {
@@ -99,7 +100,7 @@ namespace DevExpressWinFormsExtension.DataControls
         {
             using (var control = new InputBoxValidableDev(string.Empty, labelTitle, customInputValidationFunc))
             {
-                var result = ControlBox.Show(parentControl, control, controlCaption, MessageBoxButtons.OKCancel, 0, canResize: false, control);
+                var result = XtraUserControlHelper.ShowControl(parentControl, control, controlCaption, MessageBoxButtons.OKCancel, isSizable: false, 0, control);
                 if (result == DialogResult.OK)
                 {
                     return control.InputValue;

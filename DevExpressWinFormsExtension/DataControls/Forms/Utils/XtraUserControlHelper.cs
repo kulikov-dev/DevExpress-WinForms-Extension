@@ -59,7 +59,7 @@ namespace DevExpressWinFormsExtension.DataControls.Forms.Utils
         /// <param name="acceptButtonIndex"> The button on the form that is clicked when the user presses the ENTER key </param>
         /// <param name="focusedChild"> Focused child control </param>
         /// <returns> DialogResult </returns>
-        public static DialogResult ShowControl(XtraForm ownerForm, Control control, string title, MessageBoxButtons? defaultButtons, bool isSizable, int acceptButtonIndex = -1, Control focusedChild = null)
+        public static DialogResult ShowControl(Control ownerForm, Control control, string title, MessageBoxButtons? defaultButtons, bool isSizable, int acceptButtonIndex = -1, Control focusedChild = null)
         {
             var parentForm = CreateParentForm(control, ShowingControlModeEnum.DialogBox, title, isSizable, focusedChild);
             PutControlsOnFormFooter(parentForm, control, defaultButtons, acceptButtonIndex);
@@ -77,7 +77,7 @@ namespace DevExpressWinFormsExtension.DataControls.Forms.Utils
         /// <param name="isSizable"> Is a control sizable </param>
         /// <param name="focusedChild"></param>
         /// <returns></returns>
-        public static DialogResult ShowControl(XtraForm ownerForm, Control control, string title, bool isSizable, Control focusedChild = null)
+        public static DialogResult ShowControl(Control ownerForm, Control control, string title, bool isSizable, Control focusedChild = null)
         {
             return ShowControl(ownerForm, control, title, null, isSizable, -1, focusedChild);
         }
