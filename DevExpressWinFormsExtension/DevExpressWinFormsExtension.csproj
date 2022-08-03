@@ -1,0 +1,252 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3638FA4B-5F64-4F9B-8D0A-F7EC7B753202}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DevExpressWinFormsExtension</RootNamespace>
+    <AssemblyName>DevExpressWinFormsExtension</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\Debug\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Charts.v19.1.Core, Version=19.1.15.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Data.v19.1, Version=19.1.15.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v19.1, Version=19.1.15.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraBars.v19.1, Version=19.1.15.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v19.1, Version=19.1.15.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v19.1.Extensions, Version=19.1.15.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v19.1.UI, Version=19.1.15.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v19.1, Version=19.1.15.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGrid.v19.1, Version=19.1.15.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraTreeList.v19.1, Version=19.1.15.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="LRUCache">
+      <HintPath>..\..\LRUCache\src\LRUCache\bin\Debug\LRUCache.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DataControls\ColorPickEdit\ColorPickEditUtils.cs" />
+    <Compile Include="DataControls\Extensions\GridViewExtension.cs" />
+    <Compile Include="DataControls\GridView\BandedGridViewDev.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DataControls\GridView\BandedGridViewDev.designer.cs">
+      <DependentUpon>BandedGridViewDev.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataControls\GridView\GridControlDev.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DataControls\GridView\GridControlDev.designer.cs">
+      <DependentUpon>GridControlDev.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataControls\GridView\Utils\GridHelper.cs" />
+    <Compile Include="DataControls\GridView\Utils\GridPainterDev.cs" />
+    <Compile Include="DataControls\GridView\GridViewDev.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DataControls\GridView\GridViewDev.designer.cs">
+      <DependentUpon>GridViewDev.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataControls\GridView\Utils\BandedGridDevInfoRegistrator.cs" />
+    <Compile Include="DataControls\GridView\Utils\GridViewDevInfoRegistrator.cs" />
+    <Compile Include="DataControls\TreeList\Utils\TreeListSearchableDesigner.cs" />
+    <Compile Include="Utils\ColorExtension.cs" />
+    <Compile Include="Utils\SolidBrushesCache.cs" />
+    <Compile Include="DataControls\Forms\Utils\XtraUserControlHelper.cs" />
+    <Compile Include="DataControls\PasswordTextEditDev.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DataControls\DateDoubleTrackBarControlDev.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DataControls\DateDoubleTrackBarControlDev.Designer.cs">
+      <DependentUpon>DateDoubleTrackBarControlDev.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataControls\CheckedListBoxControlDev.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Utils\EnumEditorItem.cs" />
+    <Compile Include="Utils\EnumExtension.cs" />
+    <Compile Include="DataControls\Forms\Utils\ShowControlParentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DataControls\Forms\Utils\ShowControlParentForm.Designer.cs">
+      <DependentUpon>ShowControlParentForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataControls\GroupControlCheckedDev.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DataControls\GroupControlCheckedDev.Designer.cs">
+      <DependentUpon>GroupControlCheckedDev.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaces\IClosableControl.cs" />
+    <Compile Include="Interfaces\IValidableControl.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Utils\SkinHelper.cs" />
+    <Compile Include="DataControls\TreeList\TreeListSearchable.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DataControls\TreeList\TreeListSearchable.Designer.cs">
+      <DependentUpon>TreeListSearchable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataControls\ColorPickEdit\ColorPickEditDev.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DataControls\ColorPickEdit\ColorPickEditDev.Designer.cs">
+      <DependentUpon>ColorPickEditDev.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataControls\InputBoxValidableDev.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DataControls\InputBoxValidableDev.Designer.cs">
+      <DependentUpon>InputBoxValidableDev.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataControls\LookUp\LookUpDev.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DataControls\LookUp\PopupLookUpEditFormDev.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DataControls\LookUp\RepositoryItemLookUpDev.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DataControls\ColorPickEdit\RepositoryItemColorPickEditDev.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DataControls\ColorPickEdit\RepositoryItemColorPickEditDev.Designer.cs">
+      <DependentUpon>RepositoryItemColorPickEditDev.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="DataControls\Forms\XtraFormDev.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DataControls\TreeList\Utils\TreeListViewInfoDev.cs" />
+    <Compile Include="DataControls\Forms\XtraUserControlDev.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DataControls\TreeList\TreeListDev.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DataControls\Extensions\TreeListNodeExtension.cs" />
+    <Compile Include="DataControls\Extensions\ChartControlExtension.cs" />
+    <Compile Include="DataControls\Extensions\DateEditExtension.cs" />
+    <Compile Include="DataControls\Extensions\BaseEditExtension.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="DataControls\CheckedListBoxControlDev.resx">
+      <DependentUpon>CheckedListBoxControlDev.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DataControls\DateDoubleTrackBarControlDev.resx">
+      <DependentUpon>DateDoubleTrackBarControlDev.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DataControls\GridView\BandedGridViewDev.resx">
+      <DependentUpon>BandedGridViewDev.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DataControls\GridView\GridViewDev.resx">
+      <DependentUpon>GridViewDev.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DataControls\GroupControlCheckedDev.resx">
+      <DependentUpon>GroupControlCheckedDev.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DataControls\TreeList\TreeListSearchable.resx">
+      <DependentUpon>TreeListSearchable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DataControls\ColorPickEdit\ColorPickEditDev.resx">
+      <DependentUpon>ColorPickEditDev.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DataControls\InputBoxValidableDev.resx">
+      <DependentUpon>InputBoxValidableDev.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DataControls\ColorPickEdit\RepositoryItemColorPickEditDev.resx">
+      <DependentUpon>RepositoryItemColorPickEditDev.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Color_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Lock_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Unlock_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Clear_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ImageBrush_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CollapseAll_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ExpandAll_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IsHidden_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IsVisible_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Decimal_16.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

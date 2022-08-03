@@ -48,3 +48,4 @@
 ### Utils
 * SkinHelper. Utils to work with colors considering the App Theme.
 * SolidBrushesCache. LRU cache for solid brushes.
+* XtraUserControlHelper. Allows to show a XtraUserControl in popup window with float/dialog-box modes.

@@ -64,7 +64,7 @@
             this.labelText.Name = "labelText";
             this.labelText.Size = new System.Drawing.Size(52, 13);
             this.labelText.TabIndex = 0;
-            this.labelText.Text = "Значение:";
+            this.labelText.Text = "Value:";
             // 
             // panelControl1
             // 

@@ -310,7 +310,7 @@ namespace DevExpressWinFormsExtension.DataControls.GridView
             {
                 return;
             }
-
+            
             column.AppearanceCell.BackColor = colorControl.Color;
             column.AppearanceHeader.BackColor = colorControl.Color;
         }
