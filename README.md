@@ -48,4 +48,5 @@
 ### Utils
 * SkinHelper. Utils to work with colors considering the App Theme.
 * SolidBrushesCache. LRU cache for solid brushes.
+* RegexMaskHelper. Common regex patterns to use as a Mask in editors/repositories.
 * XtraUserControlHelper. Allows to show a XtraUserControl in popup window with float/dialog-box modes.
