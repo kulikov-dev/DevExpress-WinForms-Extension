@@ -25,6 +25,8 @@
   4. Correct multiple checked changes for 'bool' columns with multiple selected rows;
   5. Cache for FormatRules;
   6. Custom user column header colorizing.
+### ProgressManager
+  Easy way to attach ProgressBar to XtraUserControl for a long operations with user cancellation.
 #### Extensions
 * BaseEditExtension. Contains method 'IsValueEmpty' which allows validating input data of each BaseEdit control for emptiness. If necessary, set up the background color of the control to warning color.
 * DateEditExtension. Contains method 'UpdateView' for DateEdit and RepositoryItemDateEdit to initialize the view of the control according to the datetime interval type. 
