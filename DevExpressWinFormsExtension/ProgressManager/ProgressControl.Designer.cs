@@ -64,6 +64,8 @@
             // 
             // marqueeProgress
             // 
+            this.marqueeProgress.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.marqueeProgress.EditValue = 0;
             this.marqueeProgress.Location = new System.Drawing.Point(42, 158);
             this.marqueeProgress.Name = "marqueeProgress";
