@@ -26,7 +26,7 @@
   5. Cache for FormatRules;
   6. Custom user column header colorizing.
 ### ProgressManager
-  Easy way to attach ProgressBar to XtraUserControl for a long operations with user cancellation.
+  Easy way to attach ProgressBar to XtraUserControl for a long operations with user cancellation. <p align="center"> <img src="DevExpressWinFormsExtension/Resources/Samples/ProgressManagerSample.jpg" width="230" align="center" title="Screenshot of the progress for a custom control"> </p>
 #### Extensions
 * BaseEditExtension. Contains method 'IsValueEmpty' which allows validating input data of each BaseEdit control for emptiness. If necessary, set up the background color of the control to warning color.
 * DateEditExtension. Contains method 'UpdateView' for DateEdit and RepositoryItemDateEdit to initialize the view of the control according to the datetime interval type. 
