@@ -62,7 +62,7 @@
             // 
             this.labelText.Location = new System.Drawing.Point(7, 11);
             this.labelText.Name = "labelText";
-            this.labelText.Size = new System.Drawing.Size(52, 13);
+            this.labelText.Size = new System.Drawing.Size(30, 13);
             this.labelText.TabIndex = 0;
             this.labelText.Text = "Value:";
             // 
@@ -111,6 +111,7 @@
             this.MinimumSize = new System.Drawing.Size(306, 36);
             this.Name = "InputBoxValidableDev";
             this.Size = new System.Drawing.Size(306, 36);
+            this.Load += new System.EventHandler(this.InputBoxValidableDev_Load);
             ((System.ComponentModel.ISupportInitialize)(this.editValue.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);

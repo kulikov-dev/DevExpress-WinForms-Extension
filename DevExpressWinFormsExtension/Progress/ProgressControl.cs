@@ -7,7 +7,7 @@ using System.Drawing;
 using System.Threading;
 using System.Windows.Forms;
 
-namespace DevExpressWinFormsExtension.ProgressManager
+namespace DevExpressWinFormsExtension.Progress
 {
     /// <summary>
     /// Progress control to show on a XtraUserControl

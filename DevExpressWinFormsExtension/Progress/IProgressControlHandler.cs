@@ -1,6 +1,6 @@
 ﻿using System.Threading;
 
-namespace DevExpressWinFormsExtension.ProgressManager
+namespace DevExpressWinFormsExtension.Progress
 {
     /// <summary>
     /// Interface for progress manager

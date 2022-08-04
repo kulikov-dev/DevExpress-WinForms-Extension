@@ -1,4 +1,4 @@
-﻿namespace DevExpressWinFormsExtension.ProgressManager
+﻿namespace DevExpressWinFormsExtension.Progress
 {
     partial class ProgressControl
     {

@@ -51,7 +51,6 @@ namespace DevExpressWinFormsExtension.DataControls
 
             editValue.Text = defaultValue;
             this.customInputValidationFunc = customInputValidationFunc;
-            SetControlState(ValidateData());
         }
 
         /// <summary>
@@ -160,6 +159,16 @@ namespace DevExpressWinFormsExtension.DataControls
         /// <param name="sender"> Source </param>
         /// <param name="e"> Parameters </param>
         private void EditValueChanging(object sender, ChangingEventArgs e)
+        {
+            SetControlState(ValidateData());
+        }
+
+        /// <summary>
+        /// Event after control loaded
+        /// </summary>
+        /// <param name="sender"> Source </param>
+        /// <param name="e"> Parameters </param>
+        private void InputBoxValidableDev_Load(object sender, EventArgs e)
         {
             SetControlState(ValidateData());
         }

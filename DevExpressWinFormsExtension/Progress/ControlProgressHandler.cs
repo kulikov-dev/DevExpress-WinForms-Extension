@@ -2,7 +2,7 @@
 using System.Threading;
 using System.Windows.Forms;
 
-namespace DevExpressWinFormsExtension.ProgressManager
+namespace DevExpressWinFormsExtension.Progress
 {
     /// <summary>
     /// Progress manager

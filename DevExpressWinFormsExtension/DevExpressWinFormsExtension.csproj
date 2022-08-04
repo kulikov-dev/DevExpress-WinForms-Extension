@@ -91,13 +91,13 @@
     <Compile Include="DataControls\GridView\Utils\BandedGridDevInfoRegistrator.cs" />
     <Compile Include="DataControls\GridView\Utils\GridViewDevInfoRegistrator.cs" />
     <Compile Include="DataControls\TreeList\Utils\TreeListSearchableDesigner.cs" />
-    <Compile Include="ProgressManager\ControlProgressHandler.cs" />
-    <Compile Include="ProgressManager\IProgressControlHandler.cs" />
-    <Compile Include="ProgressManager\ProgressManager.cs" />
-    <Compile Include="ProgressManager\ProgressControl.cs">
+    <Compile Include="Progress\ControlProgressHandler.cs" />
+    <Compile Include="Progress\IProgressControlHandler.cs" />
+    <Compile Include="Progress\ProgressManager.cs" />
+    <Compile Include="Progress\ProgressControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ProgressManager\ProgressControl.designer.cs">
+    <Compile Include="Progress\ProgressControl.designer.cs">
       <DependentUpon>ProgressControl.cs</DependentUpon>
     </Compile>
     <Compile Include="Utils\ColorExtension.cs" />
@@ -203,7 +203,7 @@
     <EmbeddedResource Include="DataControls\GroupControlCheckedDev.resx">
       <DependentUpon>GroupControlCheckedDev.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ProgressManager\ProgressControl.resx">
+    <EmbeddedResource Include="Progress\ProgressControl.resx">
       <DependentUpon>ProgressControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />

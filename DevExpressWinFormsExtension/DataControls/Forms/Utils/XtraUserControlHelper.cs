@@ -185,19 +185,21 @@ namespace DevExpressWinFormsExtension.DataControls.Forms.Utils
                         {
                             parentForm.AcceptButton = button;
                         }
+
                         break;
                     case DialogResult.Cancel:
                         if (buttons == null)
                         {
                             parentForm.CancelButton = button;
                         }
+
                         break;
                 }
             }
 
             if (buttons != null)
             {
-                controlElements.AddRange(AppendDefaultButtons(parentForm, buttons.Value, okButton));
+                AppendDefaultButtons(parentForm, ref controlElements, buttons.Value);
             }
 
             PutControlsOnFormFooter(parentForm, controlElements, acceptButtonIndex);
@@ -255,59 +257,59 @@ namespace DevExpressWinFormsExtension.DataControls.Forms.Utils
             parentForm.ClientSize = new Size(Math.Max(parentForm.ClientSize.Width - leftPosition + (2 * formButtonsMargin), parentForm.ClientSize.Width), parentForm.ClientSize.Height);
         }
 
-        private static List<BaseControl> AppendDefaultButtons(ShowControlParentForm parentForm, MessageBoxButtons buttons, SimpleButton customOkButton)
+        /// <summary>
+        /// Appen default buttons
+        /// </summary>
+        /// <param name="parentForm"> Parent form</param>
+        /// <param name="childrenControls"> Children controls </param>
+        /// <param name="buttons"> Default buttons </param>
+        /// <returns> List of default buttons </returns>
+        private static void AppendDefaultButtons(ShowControlParentForm parentForm, ref List<BaseControl> childrenControls, MessageBoxButtons buttons)
         {
-            var result = new List<BaseControl>();
             var dialogResult = DialogResult.Cancel;
             switch (buttons)
             {
                 case MessageBoxButtons.AbortRetryIgnore:
-                    AppendButton(ref result, "Abort", DialogResult.Abort, 1);
-                    AppendButton(ref result, "Retry", DialogResult.Retry, 2);
-                    AppendButton(ref result, "Ignore", DialogResult.Ignore, 3);
+                    AppendButton(ref childrenControls, "Abort", DialogResult.Abort, 1);
+                    AppendButton(ref childrenControls, "Retry", DialogResult.Retry, 2);
+                    AppendButton(ref childrenControls, "Ignore", DialogResult.Ignore, 3);
                     dialogResult = DialogResult.Ignore;
                     break;
                 case MessageBoxButtons.OK:
-                    if (customOkButton == null)
-                    {
-                        AppendButton(ref result, "OK", DialogResult.OK, 1);
-                    }
-
+                    AppendButton(ref childrenControls, "OK", DialogResult.OK, 1);
                     break;
                 case MessageBoxButtons.OKCancel:
-                    AppendButton(ref result, "OK", DialogResult.OK, 1);
-                    AppendButton(ref result, "Cancel", DialogResult.Cancel, 2);
+                    AppendButton(ref childrenControls, "OK", DialogResult.OK, 1);
+                    AppendButton(ref childrenControls, "Cancel", DialogResult.Cancel, 2);
                     break;
                 case MessageBoxButtons.RetryCancel:
-                    AppendButton(ref result, "Retry", DialogResult.Retry, 1);
-                    AppendButton(ref result, "Cancel", DialogResult.Cancel, 2);
+                    AppendButton(ref childrenControls, "Retry", DialogResult.Retry, 1);
+                    AppendButton(ref childrenControls, "Cancel", DialogResult.Cancel, 2);
                     break;
                 case MessageBoxButtons.YesNo:
-                    AppendButton(ref result, "Yes", DialogResult.Yes, 1);
-                    AppendButton(ref result, "No", DialogResult.No, 2);
+                    AppendButton(ref childrenControls, "Yes", DialogResult.Yes, 1);
+                    AppendButton(ref childrenControls, "No", DialogResult.No, 2);
                     dialogResult = DialogResult.No;
                     break;
                 case MessageBoxButtons.YesNoCancel:
-                    AppendButton(ref result, "Yes", DialogResult.Yes, 1);
-                    AppendButton(ref result, "No", DialogResult.No, 2);
-                    AppendButton(ref result, "Cancel", DialogResult.Cancel, 3);
+                    AppendButton(ref childrenControls, "Yes", DialogResult.Yes, 1);
+                    AppendButton(ref childrenControls, "No", DialogResult.No, 2);
+                    AppendButton(ref childrenControls, "Cancel", DialogResult.Cancel, 3);
                     break;
             }
 
-            if (result.Count == 0)
+            if (childrenControls.Count == 0)
             {
-                result.Add(new SimpleButton() { Text = "Close", DialogResult = DialogResult.Cancel });
-                parentForm.CancelButton = result[0] as SimpleButton;
+                childrenControls.Add(new SimpleButton() { Text = "Close", DialogResult = DialogResult.Cancel });
+                parentForm.CancelButton = childrenControls[0] as SimpleButton;
             }
 
-            var cancelButton = result.FirstOrDefault(x => (x as SimpleButton)?.DialogResult == dialogResult) as SimpleButton;
+            var cancelButton = childrenControls.FirstOrDefault(x => (x as SimpleButton)?.DialogResult == dialogResult) as SimpleButton;
             if (cancelButton != null)
             {
                 parentForm.CancelButton = cancelButton;
                 cancelButton.Click += OnParentFormDispose;
             }
-
-            return result;
         }
 
         /// <summary>
