@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
+using System.Globalization;
 using System.Windows.Forms;
 using DevExpress.Skins;
 using DevExpress.Utils.Drawing;
@@ -903,7 +904,7 @@ namespace DevExpressWinFormsExtension.DataControls
             /// <returns> String representation </returns>
             public override string ToString()
             {
-                return Date.ToString(Format);
+                return Date.ToString(Format, CultureInfo.InvariantCulture);
             }
         }
     }
