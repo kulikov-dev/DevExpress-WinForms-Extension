@@ -1,5 +1,5 @@
 ## DevExpress WinForms extension kit
-  A small library to solve some troubles, which I met during my work with DevExpress.<p align="center"> <img src="DevExpressWinFormsExtension/Resources/Samples/SampleProject.jpg" width="550" align="center" title="A few buttons with skin preview image"> </p>
+  A small library to solve some troubles, which I met during my work with DevExpress.<p align="center"> <img src="DevExpressWinFormsExtension/Resources/Samples/SampleProject.jpg" width="550" align="center" title="Samples"> </p>
   
 ### List of components
 #### Forms
@@ -11,13 +11,13 @@
 * PasswordTextEditDev. The extension for working with passwords, allows user to show/hide input characters. <p align="center"> <img src="DevExpressWinFormsExtension/Resources/Samples/PasswordTextEditSample.jpg" width="150" align="center" title="Screenshot of the PasswordTextEdit"> </p>
 * InputBoxValidableDev. InputBox with possibility of using custom function for user input validation. <p align="center"> <img src="DevExpressWinFormsExtension/Resources/Samples/InputBoxValidableSample.jpg" width="250" align="center" title="Screenshot of the InputBoxValidable"> </p>
 * GroupControlCheckedDev. GroupControl with checkbox in header, allows user to disable/enable all controls in the GroupControl. <p align="center"> <img src="DevExpressWinFormsExtension/Resources/Samples/GroupControlCheckedSample.jpg" width="250" align="center" title="Screenshot of the GroupControlChecked"> </p>
-* LookUpDev, RepositoryItemLookUpDev. The extension that allows to show hint for each element in the editor. <p align="center"> <img src="DevExpressWinFormsExtension/Resources/Samples/LookUpSample.jpg" width="320" align="center" title="Screenshot of the GroupControlChecked"> </p>
+* LookUpDev, RepositoryItemLookUpDev. The extension that allows to show hint for each element in the editor. <p align="center"> <img src="DevExpressWinFormsExtension/Resources/Samples/LookUpSample.jpg" width="320" align="center" title="Screenshot of the LookUpDev"> </p>
 * TreeListDev, TreeListSearchable. The extensions for the standard component which supports:
   1. Hotkes for fast check/uncheck, collapse/expand nodes;
   2. Correct bounds for nodes without stateImage;
   3. Set up correct checkState for TreeList with multiselection option;
   4. Set up correct checkState for children/parent nodes according to their parent/children checkStates;
-  5. Optional filtration panel on top. <p align="center"> <img src="DevExpressWinFormsExtension/Resources/Samples/TreeListSearchableSample.jpg" width="200" align="center" title="Screenshot of the InputBoxValidable"> </p>
+  5. Optional filtration panel on top. <p align="center"> <img src="DevExpressWinFormsExtension/Resources/Samples/TreeListSearchableSample.jpg" width="200" align="center" title="Screenshot of the TreeListDev"> </p>
 * GridView/BandedGridView extensions:
   1. Allows merging a Column and a Band header panel;
   ``` csharp
@@ -31,11 +31,11 @@
   6. Auto-drawing histogram in a cell - just add keyword to a column Tag;
   ``` csharp
   colHistogram.Tag = GridHelper.IsHistogramColumn;
-  ```
+  ``` 
   7. Provides fast way to fill a DataTable structure based on the GridView structure;
-  8. Custom user column header colorizing. <p align="center"> <img src="DevExpressWinFormsExtension/Resources/Samples/GridControlSample.jpg" width="550" align="center" title="A few buttons with skin preview image"> </p>
+  8. Custom user column header colorizing. <p align="center"> <img src="DevExpressWinFormsExtension/Resources/Samples/GridControlSample.jpg" width="550" align="center" title="Grid control sample"> </p>   <p align="center"> <img src="DevExpressWinFormsExtension/Resources/Samples/GridHistogramSample.jpg" width="150" align="center" title="Screenshot of the in-place histogram"> </p> 
 ### ProgressManager
-  Easy way to attach ProgressBar to XtraUserControl for a long operations with user cancellation. <p align="center"> <img src="DevExpressWinFormsExtension/Resources/Samples/ProgressManagerSample.jpg" width="230" align="center" title="Screenshot of the progress for a custom control"> </p>
+  Easy way to attach ProgressBar to XtraUserControl for a long operations with user cancellation. <p align="center"> <img src="DevExpressWinFormsExtension/Resources/Samples/ProgressManagerSample.jpg" width="280" align="center" title="Screenshot of the progress for a custom control"> </p>
   ``` csharp
             var handler = ProgressManager.InitMarquee(this);
 
@@ -87,7 +87,7 @@
 		XtraUserControlHelper.ShowControl(this, control, "Calculator", isSizable: true);
 	}
   ```
-* MDITabsDragHelper. Allows to switch between MDI tabs during drag'n'drop operation.
+* MDITabsDragHelper. Allows to switch between MDI tabs during standard .NET drag'n'drop operation.
   ``` csharp
 	_mdiTabsDragHelper = new MDITabsDragHelper(documentManager);
 	_mdiTabsDragHelper.SelectNewPageOnDrag = true;
