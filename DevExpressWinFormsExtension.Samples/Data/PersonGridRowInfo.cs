@@ -1,4 +1,6 @@
-﻿namespace DevExpressWinFormsExtension.Samples.Data
+﻿using System.Collections.Generic;
+
+namespace DevExpressWinFormsExtension.Samples.Data
 {
     /// <summary>
     /// Row info about test person
@@ -19,5 +21,10 @@
         /// Is person valid
         /// </summary>
         public bool IsValid { get; set; }
+
+        /// <summary>
+        /// List of values for building histogram
+        /// </summary>
+        public object Histogram { get; set; }
     }
 }

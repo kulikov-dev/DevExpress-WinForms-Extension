@@ -11,6 +11,7 @@ using DevExpressWinFormsExtension.Samples.Enums;
 using DevExpress.XtraEditors;
 using DevExpressWinFormsExtension.DataControls.GridView.Utils;
 using Bogus;
+using System.Linq;
 
 namespace DevExpressWinFormsExtension.Samples
 {
@@ -48,6 +49,8 @@ namespace DevExpressWinFormsExtension.Samples
         private void InitGrid()
         {
             bandedGridViewDev.InitializeDefaultSettings();
+            bandedGridViewDev.IsHistogramDraw = true;
+            colHistogram.Tag = GridHelper.IsHistogramColumn;
 
             var source = new List<PersonGridRowInfo>();
             var testFaker = new Faker();
@@ -57,8 +60,10 @@ namespace DevExpressWinFormsExtension.Samples
                 {
                     Name = testFaker.Name.FullName(),
                     AverageSalary = testFaker.Random.Double(1000, 15000),
-                    IsValid = testFaker.Random.Bool()
+                    IsValid = testFaker.Random.Bool(),
+                    Histogram = Enumerable.Repeat(0, 1000).Select(x=> testFaker.Random.Double(0, 1000)).ToList()
                 };
+
                 source.Add(item);
             }
 
@@ -182,6 +187,11 @@ namespace DevExpressWinFormsExtension.Samples
             SolidBrushesCache.Dispose();
         }
 
+        /// <summary>
+        /// Event on closing the form
+        /// </summary>
+        /// <param name="sender"> Source </param>
+        /// <param name="e"> Parameters </param>
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             GridPainterDev.DisposePainter(bandedGridViewDev);

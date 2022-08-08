@@ -83,6 +83,7 @@
     <Compile Include="DataControls\GridView\GridControlDev.designer.cs">
       <DependentUpon>GridControlDev.cs</DependentUpon>
     </Compile>
+    <Compile Include="DataControls\GridView\HistogramData.cs" />
     <Compile Include="DataControls\GridView\Utils\GridHelper.cs" />
     <Compile Include="DataControls\GridView\Utils\GridPainterDev.cs" />
     <Compile Include="DataControls\GridView\GridViewDev.cs">

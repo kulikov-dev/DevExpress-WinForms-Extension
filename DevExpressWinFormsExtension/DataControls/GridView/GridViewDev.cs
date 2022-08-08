@@ -14,6 +14,7 @@ using DevExpressWinFormsExtension.DataControls.ColorPickEdit;
 using DevExpressWinFormsExtension.DataControls.Extensions;
 using DevExpressWinFormsExtension.DataControls.GridView.Utils;
 using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
@@ -36,6 +37,11 @@ namespace DevExpressWinFormsExtension.DataControls.GridView
         /// </summary>
         /// <remarks> Used to save format rules after DataSource recreation </remarks>
         private readonly Dictionary<string, GridFormatRule> conditionalRules = new Dictionary<string, GridFormatRule>();
+
+        /// <summary>
+        /// Histogram data cache
+        /// </summary>
+        private readonly Dictionary<int, HistogramData> histogrammsCache = new Dictionary<int, HistogramData>();
 
         /// <summary>
         /// Conditional rules updating depth
@@ -77,6 +83,38 @@ namespace DevExpressWinFormsExtension.DataControls.GridView
         [Category("Appearance")]
         [Description("Allow user set up format settings")]
         public bool AllowColumnFormatSettings { get; set; }
+
+        /// <summary>
+        /// Draw histogram
+        /// </summary>
+        [Browsable(true)]
+        [Category("Appearance")]
+        [Description("Draw histogram")]
+        public bool IsHistogramDraw = false;
+
+        /// <summary>
+        /// Cell histogram font
+        /// </summary>
+        [Browsable(true)]
+        [Category("Appearance")]
+        [Description("Cell histogram font")]
+        public Font HistogramFont = new Font("Times New Roman", 7);
+
+        /// <summary>
+        /// Cell histogram drawing color
+        /// </summary>
+        [Browsable(true)]
+        [Category("Appearance")]
+        [Description("Cell histogram drawing color")]
+        public Color HistogramColor { get; set; } = Color.CornflowerBlue;
+
+        /// <summary>
+        /// Cell histogram empty color
+        /// </summary>
+        [Browsable(true)]
+        [Category("Appearance")]
+        [Description("Cell histogram empty color")]
+        public Color HistogramEmptyColor { get; set; } = Color.DarkBlue;
 
         /// <summary>
         /// Custom GridView name for a registrator
@@ -310,7 +348,7 @@ namespace DevExpressWinFormsExtension.DataControls.GridView
             {
                 return;
             }
-            
+
             column.AppearanceCell.BackColor = colorControl.Color;
             column.AppearanceHeader.BackColor = colorControl.Color;
         }
@@ -543,7 +581,7 @@ namespace DevExpressWinFormsExtension.DataControls.GridView
         /// </summary>
         /// <param name="sender"> Source </param>
         /// <param name="e"> Parameters </param>
-        private void GridView_CustomColumnDisplayText(object sender, CustomColumnDisplayTextEventArgs e)
+        private void GridViewCustomColumnDisplayText(object sender, CustomColumnDisplayTextEventArgs e)
         {
             if (e.Column.DisplayFormat.FormatType == FormatType.Numeric)
             {
@@ -561,6 +599,38 @@ namespace DevExpressWinFormsExtension.DataControls.GridView
                     e.DisplayText = string.Empty;
                 }
             }
+        }
+
+        /// <summary>
+        /// Event on custom draw cell
+        /// </summary>
+        /// <param name="sender"> Source </param>
+        /// <param name="e"> Parameters </param>
+        private void GridViewCustomDrawCell(object sender, RowCellCustomDrawEventArgs e)
+        {
+            if (IsHistogramDraw)
+            {
+                if (e.Column.Tag != null && e.Column.Tag.ToString().Equals(GridHelper.IsHistogramColumn))
+                {
+                    var hash = e.Column.GetHashCode() + GetRow(e.RowHandle).GetHashCode();
+                    if (!histogrammsCache.ContainsKey(hash))
+                    {
+                        var data = GridHelper.GetHistogrammPoints(e.CellValue as IEnumerable<double>);
+                        histogrammsCache.Add(hash, data);
+                    }
+
+                    GridHelper.DrawCellHistogram(histogrammsCache[hash], HistogramFont, HistogramColor, HistogramEmptyColor, e);
+                }
+            }
+        }
+
+        /// <summary>
+        /// Event on data source changing
+        /// </summary>
+        protected override void OnDataSourceChanging()
+        {
+            base.OnDataSourceChanging();
+            histogrammsCache.Clear();
         }
 
         /// <summary>
@@ -630,7 +700,8 @@ namespace DevExpressWinFormsExtension.DataControls.GridView
             MouseDown += GridViewMouseDown;
             RowCellStyle += GridViewRowCellStyle;
             FormatRules.CollectionChanged += FormatRulesCollectionChanged;
-            CustomColumnDisplayText += GridView_CustomColumnDisplayText;
+            CustomColumnDisplayText += GridViewCustomColumnDisplayText;
+            CustomDrawCell += GridViewCustomDrawCell;
         }
 
         /// <summary>

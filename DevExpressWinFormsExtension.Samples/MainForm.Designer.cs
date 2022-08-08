@@ -72,6 +72,7 @@ namespace DevExpressWinFormsExtension.Samples
             this.bandInfo = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
             this.colAverageSalary = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.colIsValid = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.colHistogram = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.maskTextEdit.Properties)).BeginInit();
@@ -265,7 +266,7 @@ namespace DevExpressWinFormsExtension.Samples
             // 
             this.dateDoubleTrackBarControlDev.AutoMiddleDate = false;
             this.dateDoubleTrackBarControlDev.ButtonSize = new System.Drawing.Size(12, 26);
-            this.dateDoubleTrackBarControlDev.LeftDate = new System.DateTime(2021, 8, 8, 0, 0, 0, 0);
+            this.dateDoubleTrackBarControlDev.LeftDate = new System.DateTime(2021, 8, 9, 0, 0, 0, 0);
             this.dateDoubleTrackBarControlDev.LengthMinimum = 0;
             this.dateDoubleTrackBarControlDev.Location = new System.Drawing.Point(422, 11);
             this.dateDoubleTrackBarControlDev.MaxDateLimit = new System.DateTime(2022, 7, 26, 0, 0, 0, 0);
@@ -381,12 +382,16 @@ namespace DevExpressWinFormsExtension.Samples
             this.bandedGridViewDev.Columns.AddRange(new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn[] {
             this.colName,
             this.colAverageSalary,
-            this.colIsValid});
+            this.colIsValid,
+            this.colHistogram});
             this.bandedGridViewDev.GridControl = this.gridControlDev;
+            this.bandedGridViewDev.HistogramColor = System.Drawing.Color.CornflowerBlue;
+            this.bandedGridViewDev.HistogramEmptyColor = System.Drawing.Color.DarkBlue;
             this.bandedGridViewDev.Name = "bandedGridViewDev";
             this.bandedGridViewDev.OptionsSelection.MultiSelect = true;
             this.bandedGridViewDev.OptionsSelection.MultiSelectMode = DevExpress.XtraGrid.Views.Grid.GridMultiSelectMode.CellSelect;
             this.bandedGridViewDev.OptionsView.ColumnAutoWidth = false;
+            this.bandedGridViewDev.RowHeight = 40;
             // 
             // bandName
             // 
@@ -408,9 +413,10 @@ namespace DevExpressWinFormsExtension.Samples
             this.bandInfo.Caption = "Very long band description are placed here";
             this.bandInfo.Columns.Add(this.colAverageSalary);
             this.bandInfo.Columns.Add(this.colIsValid);
+            this.bandInfo.Columns.Add(this.colHistogram);
             this.bandInfo.Name = "bandInfo";
             this.bandInfo.VisibleIndex = 1;
-            this.bandInfo.Width = 150;
+            this.bandInfo.Width = 350;
             // 
             // colAverageSalary
             // 
@@ -427,6 +433,15 @@ namespace DevExpressWinFormsExtension.Samples
             this.colIsValid.FieldName = "IsValid";
             this.colIsValid.Name = "colIsValid";
             this.colIsValid.Visible = true;
+            // 
+            // colHistogram
+            // 
+            this.colHistogram.Caption = "Histogram";
+            this.colHistogram.FieldName = "Histogram";
+            this.colHistogram.MinWidth = 150;
+            this.colHistogram.Name = "colHistogram";
+            this.colHistogram.Visible = true;
+            this.colHistogram.Width = 200;
             // 
             // MainForm
             // 
@@ -492,6 +507,7 @@ namespace DevExpressWinFormsExtension.Samples
         private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn colName;
         private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn colAverageSalary;
         private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn colIsValid;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn colHistogram;
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand bandName;
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand bandInfo;
     }

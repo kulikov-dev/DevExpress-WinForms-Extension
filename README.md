@@ -28,8 +28,12 @@
   3. Improvements to work with merged cells: correct odd/even color, applying user changes to merged cells;
   4. Correct multiple checked changes for 'bool' columns with multiple selected rows;
   5. Cache for FormatRules, in case of DataSource changing;
-  6. Custom user column header colorizing;
-  7. Provides fast way to fill a DataTable structure based on the GridView structure. <p align="center"> <img src="DevExpressWinFormsExtension/Resources/Samples/GridControlSample.jpg" width="550" align="center" title="A few buttons with skin preview image"> </p>
+  6. Auto-drawing histogram in a cell - just add keyword to a column Tag;
+  ``` csharp
+  colHistogram.Tag = GridHelper.IsHistogramColumn;
+  ```
+  7. Provides fast way to fill a DataTable structure based on the GridView structure;
+  8. Custom user column header colorizing. <p align="center"> <img src="DevExpressWinFormsExtension/Resources/Samples/GridControlSample.jpg" width="550" align="center" title="A few buttons with skin preview image"> </p>
 ### ProgressManager
   Easy way to attach ProgressBar to XtraUserControl for a long operations with user cancellation. <p align="center"> <img src="DevExpressWinFormsExtension/Resources/Samples/ProgressManagerSample.jpg" width="230" align="center" title="Screenshot of the progress for a custom control"> </p>
   ``` csharp
