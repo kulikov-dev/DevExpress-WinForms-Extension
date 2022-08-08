@@ -42,22 +42,18 @@ namespace DevExpressWinFormsExtension.Samples
             Application.ApplicationExit += Application_ApplicationExit;
         }
 
-        private class GridInfo
-        {
-            public string Name { get; set; }
-            public double AverageSalary { get; set; }
-            public bool IsValid { get; set; }
-        }
-
+        /// <summary>
+        /// GridView initilization
+        /// </summary>
         private void InitGrid()
         {
             bandedGridViewDev.InitializeDefaultSettings();
 
-            var source = new List<GridInfo>();
+            var source = new List<PersonGridRowInfo>();
             var testFaker = new Faker();
             for (var i = 0; i < 25; ++i)
             {
-                var item = new GridInfo()
+                var item = new PersonGridRowInfo()
                 {
                     Name = testFaker.Name.FullName(),
                     AverageSalary = testFaker.Random.Double(1000, 15000),
