@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DevExpressWinFormsExtension.Utils;
+using System;
 
 namespace DevExpressWinFormsExtension.Helpers
 {

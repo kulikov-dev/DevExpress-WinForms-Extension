@@ -67,5 +67,19 @@
 ### Utils
 * SkinHelper. Utils to work with colors considering the App Theme, get skin preview image. <p align="center"> <img src="DevExpressWinFormsExtension/Resources/Samples/SkinPreviewSample.jpg" width="80" align="center" title="A few buttons with skin preview image"> </p>
 * SolidBrushesCache. LRU cache for solid brushes.
+  ``` csharp
+	SolidBrushesCache.GetBrushByColor(ForeColor)
+  ```
 * RegexMaskHelper. Common regex patterns to use as a Mask in editors/repositories.
 * XtraUserControlHelper. Allows to show a XtraUserControl in popup window with float/dialog-box modes.
+  ``` csharp
+	using (var control = new CalcProgressControl())
+	{
+		XtraUserControlHelper.ShowControl(this, control, "Calculator", isSizable: true);
+	}
+  ```
+* MDITabsDragHelper. Allows to switch between MDI tabs during drag'n'drop operation.
+  ``` csharp
+	_mdiTabsDragHelper = new MDITabsDragHelper(documentManager);
+	_mdiTabsDragHelper.SelectNewPageOnDrag = true;
+  ```

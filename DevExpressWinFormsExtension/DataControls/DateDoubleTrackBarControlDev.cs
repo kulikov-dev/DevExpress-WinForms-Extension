@@ -8,6 +8,7 @@ using DevExpress.Skins;
 using DevExpress.Utils.Drawing;
 using DevExpress.XtraEditors;
 using DevExpressWinFormsExtension.DataControls.Forms;
+using DevExpressWinFormsExtension.Utils;
 
 namespace DevExpressWinFormsExtension.DataControls
 {

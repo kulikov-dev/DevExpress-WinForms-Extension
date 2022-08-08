@@ -1,11 +1,12 @@
 ﻿using DevExpress.XtraEditors;
+using DevExpressWinFormsExtension.DataControls.Forms.Utils;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 
-namespace DevExpressWinFormsExtension.DataControls.Forms.Utils
+namespace DevExpressWinFormsExtension.Utils
 {
     /// <summary>
     /// Helper to work with XtraUserControl.

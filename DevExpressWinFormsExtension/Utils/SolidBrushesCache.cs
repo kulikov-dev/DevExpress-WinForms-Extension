@@ -3,7 +3,7 @@ using System;
 using System.Drawing;
 using System.Reflection;
 
-namespace DevExpressWinFormsExtension
+namespace DevExpressWinFormsExtension.Utils
 {
     /// <summary>
     /// Class for caching solid brushes

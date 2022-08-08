@@ -1,11 +1,12 @@
 ﻿using DevExpress.XtraEditors;
 using DevExpress.XtraEditors.Repository;
+using DevExpressWinFormsExtension.Helpers;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 
-namespace DevExpressWinFormsExtension.Helpers
+namespace DevExpressWinFormsExtension.Utils
 {
     /// <summary>
     /// Extension for Enums

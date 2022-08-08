@@ -5,7 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Linq;
 using System.Windows.Forms;
-using static DevExpressWinFormsExtension.DataControls.Forms.Utils.XtraUserControlHelper;
+using static DevExpressWinFormsExtension.Utils.XtraUserControlHelper;
 
 namespace DevExpressWinFormsExtension.DataControls.Forms.Utils
 {
