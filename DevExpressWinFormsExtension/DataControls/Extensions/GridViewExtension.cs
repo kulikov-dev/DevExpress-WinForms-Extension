@@ -103,13 +103,10 @@ namespace DevExpressWinFormsExtension.DataControls.Extensions
         }
 
         /// <summary>
-        /// Get best fit width for bands
+        /// Adjust width by bands captions
         /// </summary>
         /// <param name="bandedGridView"> Grid view </param>
-        /// <remarks>
-        /// 'BestFitColumns' doesn't use bands titles, only columns.
-        /// </remarks>
-        public static void BestBandsFit(this BandedGridView bandedGridView)
+        public static void BestFitBands(this BandedGridView bandedGridView)
         {
             using (var graphics = bandedGridView.GridControl.CreateGraphics())
             {
@@ -149,7 +146,15 @@ namespace DevExpressWinFormsExtension.DataControls.Extensions
         {
             foreach (GridBand band in bands)
             {
-                band.MinWidth = (int)graphics.MeasureString(band.Caption, band.AppearanceHeader.Font).Width + 6;
+                if (string.IsNullOrWhiteSpace(band.Caption))
+                {
+                    band.MinWidth = band.Columns.Sum(column => column.Width);
+                }
+                else
+                {
+                    band.MinWidth = (int)graphics.MeasureString(band.Caption, band.AppearanceHeader.Font).Width + 6;
+                }
+
                 band.Width = band.MinWidth + 2;
                 UpdateMinWidth(band.Children, graphics);
             }

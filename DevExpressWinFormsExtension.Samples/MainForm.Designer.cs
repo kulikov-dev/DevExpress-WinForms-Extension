@@ -34,11 +34,11 @@ namespace DevExpressWinFormsExtension.Samples
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions2 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject5 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject6 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject7 = new DevExpress.Utils.SerializableAppearanceObject();
-            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject8 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraEditors.Controls.EditorButtonImageOptions editorButtonImageOptions1 = new DevExpress.XtraEditors.Controls.EditorButtonImageOptions();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject1 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
             this.dateEdit = new DevExpress.XtraEditors.DateEdit();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.btnShowInputBox = new DevExpress.XtraEditors.SimpleButton();
@@ -62,6 +62,16 @@ namespace DevExpressWinFormsExtension.Samples
             this.colorPickEditDev2 = new DevExpressWinFormsExtension.DataControls.ColorPickEdit.ColorPickEditDev();
             this.colorPickEditDev1 = new DevExpressWinFormsExtension.DataControls.ColorPickEdit.ColorPickEditDev();
             this.cbDateType = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.xtraTabControl = new DevExpress.XtraTab.XtraTabControl();
+            this.xtraTabPageEditors = new DevExpress.XtraTab.XtraTabPage();
+            this.xtraTabPageGrid = new DevExpress.XtraTab.XtraTabPage();
+            this.gridControlDev = new DevExpressWinFormsExtension.DataControls.GridView.GridControlDev();
+            this.bandedGridViewDev = new DevExpressWinFormsExtension.DataControls.GridView.BandedGridViewDev();
+            this.bandName = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
+            this.colName = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.bandInfo = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
+            this.colAverageSalary = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.colIsValid = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.maskTextEdit.Properties)).BeginInit();
@@ -72,12 +82,18 @@ namespace DevExpressWinFormsExtension.Samples
             ((System.ComponentModel.ISupportInitialize)(this.colorPickEditDev2.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.colorPickEditDev1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbDateType.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl)).BeginInit();
+            this.xtraTabControl.SuspendLayout();
+            this.xtraTabPageEditors.SuspendLayout();
+            this.xtraTabPageGrid.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControlDev)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bandedGridViewDev)).BeginInit();
             this.SuspendLayout();
             // 
             // dateEdit
             // 
             this.dateEdit.EditValue = null;
-            this.dateEdit.Location = new System.Drawing.Point(265, 92);
+            this.dateEdit.Location = new System.Drawing.Point(266, 91);
             this.dateEdit.Name = "dateEdit";
             this.dateEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -94,7 +110,7 @@ namespace DevExpressWinFormsExtension.Samples
             // 
             // btnShowInputBox
             // 
-            this.btnShowInputBox.Location = new System.Drawing.Point(131, 144);
+            this.btnShowInputBox.Location = new System.Drawing.Point(132, 143);
             this.btnShowInputBox.Name = "btnShowInputBox";
             this.btnShowInputBox.Size = new System.Drawing.Size(75, 23);
             this.btnShowInputBox.TabIndex = 8;
@@ -103,7 +119,7 @@ namespace DevExpressWinFormsExtension.Samples
             // 
             // labelControl2
             // 
-            this.labelControl2.Location = new System.Drawing.Point(12, 42);
+            this.labelControl2.Location = new System.Drawing.Point(13, 41);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(109, 13);
             this.labelControl2.TabIndex = 17;
@@ -111,7 +127,7 @@ namespace DevExpressWinFormsExtension.Samples
             // 
             // labelControl3
             // 
-            this.labelControl3.Location = new System.Drawing.Point(12, 69);
+            this.labelControl3.Location = new System.Drawing.Point(13, 68);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(84, 13);
             this.labelControl3.TabIndex = 18;
@@ -119,7 +135,7 @@ namespace DevExpressWinFormsExtension.Samples
             // 
             // labelControl5
             // 
-            this.labelControl5.Location = new System.Drawing.Point(12, 95);
+            this.labelControl5.Location = new System.Drawing.Point(13, 94);
             this.labelControl5.Name = "labelControl5";
             this.labelControl5.Size = new System.Drawing.Size(92, 13);
             this.labelControl5.TabIndex = 20;
@@ -127,7 +143,7 @@ namespace DevExpressWinFormsExtension.Samples
             // 
             // labelControl1
             // 
-            this.labelControl1.Location = new System.Drawing.Point(12, 15);
+            this.labelControl1.Location = new System.Drawing.Point(13, 14);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(58, 13);
             this.labelControl1.TabIndex = 21;
@@ -135,7 +151,7 @@ namespace DevExpressWinFormsExtension.Samples
             // 
             // labelControl6
             // 
-            this.labelControl6.Location = new System.Drawing.Point(12, 149);
+            this.labelControl6.Location = new System.Drawing.Point(13, 148);
             this.labelControl6.Name = "labelControl6";
             this.labelControl6.Size = new System.Drawing.Size(109, 13);
             this.labelControl6.TabIndex = 22;
@@ -143,7 +159,7 @@ namespace DevExpressWinFormsExtension.Samples
             // 
             // labelControl4
             // 
-            this.labelControl4.Location = new System.Drawing.Point(12, 178);
+            this.labelControl4.Location = new System.Drawing.Point(13, 177);
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(91, 13);
             this.labelControl4.TabIndex = 24;
@@ -151,7 +167,7 @@ namespace DevExpressWinFormsExtension.Samples
             // 
             // btnShowProgressManagerControl
             // 
-            this.btnShowProgressManagerControl.Location = new System.Drawing.Point(131, 173);
+            this.btnShowProgressManagerControl.Location = new System.Drawing.Point(132, 172);
             this.btnShowProgressManagerControl.Name = "btnShowProgressManagerControl";
             this.btnShowProgressManagerControl.Size = new System.Drawing.Size(75, 23);
             this.btnShowProgressManagerControl.TabIndex = 23;
@@ -160,14 +176,14 @@ namespace DevExpressWinFormsExtension.Samples
             // 
             // maskTextEdit
             // 
-            this.maskTextEdit.Location = new System.Drawing.Point(131, 118);
+            this.maskTextEdit.Location = new System.Drawing.Point(132, 117);
             this.maskTextEdit.Name = "maskTextEdit";
             this.maskTextEdit.Size = new System.Drawing.Size(254, 20);
             this.maskTextEdit.TabIndex = 25;
             // 
             // labelControl7
             // 
-            this.labelControl7.Location = new System.Drawing.Point(12, 121);
+            this.labelControl7.Location = new System.Drawing.Point(13, 120);
             this.labelControl7.Name = "labelControl7";
             this.labelControl7.Size = new System.Drawing.Size(90, 13);
             this.labelControl7.TabIndex = 26;
@@ -176,7 +192,7 @@ namespace DevExpressWinFormsExtension.Samples
             // lookUpDev
             // 
             this.lookUpDev.DescriptionField = "";
-            this.lookUpDev.Location = new System.Drawing.Point(131, 12);
+            this.lookUpDev.Location = new System.Drawing.Point(132, 11);
             this.lookUpDev.Name = "lookUpDev";
             this.lookUpDev.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -188,7 +204,7 @@ namespace DevExpressWinFormsExtension.Samples
             // treeListSearchable
             // 
             this.treeListSearchable.IsSearchable = true;
-            this.treeListSearchable.Location = new System.Drawing.Point(421, 79);
+            this.treeListSearchable.Location = new System.Drawing.Point(422, 78);
             this.treeListSearchable.Name = "treeListSearchable";
             this.treeListSearchable.Size = new System.Drawing.Size(253, 180);
             this.treeListSearchable.TabIndex = 12;
@@ -200,7 +216,7 @@ namespace DevExpressWinFormsExtension.Samples
             this.groupControlCheckedDev.Controls.Add(this.btnDarkSkin);
             this.groupControlCheckedDev.Controls.Add(this.btnOfficeSkin);
             this.groupControlCheckedDev.Controls.Add(this.btnBlueSkin);
-            this.groupControlCheckedDev.Location = new System.Drawing.Point(145, 202);
+            this.groupControlCheckedDev.Location = new System.Drawing.Point(146, 201);
             this.groupControlCheckedDev.Name = "groupControlCheckedDev";
             this.groupControlCheckedDev.Size = new System.Drawing.Size(216, 65);
             this.groupControlCheckedDev.TabIndex = 9;
@@ -236,24 +252,24 @@ namespace DevExpressWinFormsExtension.Samples
             // passwordTextEditDev
             // 
             this.passwordTextEditDev.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.passwordTextEditDev.Location = new System.Drawing.Point(131, 38);
+            this.passwordTextEditDev.Location = new System.Drawing.Point(128, 37);
             this.passwordTextEditDev.Name = "passwordTextEditDev";
-            editorButtonImageOptions2.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions2.Image")));
+            editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
             this.passwordTextEditDev.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions2, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject5, serializableAppearanceObject6, serializableAppearanceObject7, serializableAppearanceObject8, "Show password", "Visible", null, DevExpress.Utils.ToolTipAnchor.Default)});
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "Show password", "Visible", null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.passwordTextEditDev.Properties.PasswordChar = '*';
-            this.passwordTextEditDev.Size = new System.Drawing.Size(254, 22);
+            this.passwordTextEditDev.Size = new System.Drawing.Size(258, 24);
             this.passwordTextEditDev.TabIndex = 7;
             // 
             // dateDoubleTrackBarControlDev
             // 
             this.dateDoubleTrackBarControlDev.AutoMiddleDate = false;
             this.dateDoubleTrackBarControlDev.ButtonSize = new System.Drawing.Size(12, 26);
-            this.dateDoubleTrackBarControlDev.LeftDate = new System.DateTime(2021, 8, 4, 0, 0, 0, 0);
+            this.dateDoubleTrackBarControlDev.LeftDate = new System.DateTime(2021, 8, 8, 0, 0, 0, 0);
             this.dateDoubleTrackBarControlDev.LengthMinimum = 0;
-            this.dateDoubleTrackBarControlDev.Location = new System.Drawing.Point(421, 12);
+            this.dateDoubleTrackBarControlDev.Location = new System.Drawing.Point(422, 11);
             this.dateDoubleTrackBarControlDev.MaxDateLimit = new System.DateTime(2022, 7, 26, 0, 0, 0, 0);
-            this.dateDoubleTrackBarControlDev.MiddleButtonVisibility = false;
+            this.dateDoubleTrackBarControlDev.MiddleButtonVisibility = true;
             this.dateDoubleTrackBarControlDev.MiddleDate = new System.DateTime(2022, 1, 24, 0, 0, 0, 0);
             this.dateDoubleTrackBarControlDev.MinDateLimit = new System.DateTime(2021, 7, 26, 0, 0, 0, 0);
             this.dateDoubleTrackBarControlDev.Name = "dateDoubleTrackBarControlDev";
@@ -265,30 +281,28 @@ namespace DevExpressWinFormsExtension.Samples
             // colorPickEditDev2
             // 
             this.colorPickEditDev2.EditValue = System.Drawing.Color.Empty;
-            this.colorPickEditDev2.Location = new System.Drawing.Point(265, 66);
+            this.colorPickEditDev2.Location = new System.Drawing.Point(266, 65);
             this.colorPickEditDev2.Name = "colorPickEditDev2";
             this.colorPickEditDev2.Properties.AutomaticColor = System.Drawing.Color.Black;
             this.colorPickEditDev2.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.colorPickEditDev2.Properties.ColorDialogOptions.ShowMakeWebSafeButton = false;
             this.colorPickEditDev2.Size = new System.Drawing.Size(120, 20);
             this.colorPickEditDev2.TabIndex = 3;
             // 
             // colorPickEditDev1
             // 
             this.colorPickEditDev1.EditValue = System.Drawing.Color.Empty;
-            this.colorPickEditDev1.Location = new System.Drawing.Point(131, 66);
+            this.colorPickEditDev1.Location = new System.Drawing.Point(132, 65);
             this.colorPickEditDev1.Name = "colorPickEditDev1";
             this.colorPickEditDev1.Properties.AutomaticColor = System.Drawing.Color.Black;
             this.colorPickEditDev1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.colorPickEditDev1.Properties.ColorDialogOptions.ShowMakeWebSafeButton = false;
             this.colorPickEditDev1.Size = new System.Drawing.Size(120, 20);
             this.colorPickEditDev1.TabIndex = 2;
             // 
             // cbDateType
             // 
-            this.cbDateType.Location = new System.Drawing.Point(131, 92);
+            this.cbDateType.Location = new System.Drawing.Point(132, 91);
             this.cbDateType.Name = "cbDateType";
             this.cbDateType.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -297,34 +311,134 @@ namespace DevExpressWinFormsExtension.Samples
             this.cbDateType.TabIndex = 27;
             this.cbDateType.SelectedIndexChanged += new System.EventHandler(this.cbDateType_SelectedIndexChanged);
             // 
+            // xtraTabControl
+            // 
+            this.xtraTabControl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.xtraTabControl.Location = new System.Drawing.Point(0, 0);
+            this.xtraTabControl.Name = "xtraTabControl";
+            this.xtraTabControl.SelectedTabPage = this.xtraTabPageEditors;
+            this.xtraTabControl.Size = new System.Drawing.Size(689, 299);
+            this.xtraTabControl.TabIndex = 28;
+            this.xtraTabControl.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
+            this.xtraTabPageEditors,
+            this.xtraTabPageGrid});
+            // 
+            // xtraTabPageEditors
+            // 
+            this.xtraTabPageEditors.Controls.Add(this.labelControl1);
+            this.xtraTabPageEditors.Controls.Add(this.cbDateType);
+            this.xtraTabPageEditors.Controls.Add(this.colorPickEditDev1);
+            this.xtraTabPageEditors.Controls.Add(this.labelControl7);
+            this.xtraTabPageEditors.Controls.Add(this.colorPickEditDev2);
+            this.xtraTabPageEditors.Controls.Add(this.maskTextEdit);
+            this.xtraTabPageEditors.Controls.Add(this.dateDoubleTrackBarControlDev);
+            this.xtraTabPageEditors.Controls.Add(this.labelControl4);
+            this.xtraTabPageEditors.Controls.Add(this.passwordTextEditDev);
+            this.xtraTabPageEditors.Controls.Add(this.btnShowProgressManagerControl);
+            this.xtraTabPageEditors.Controls.Add(this.groupControlCheckedDev);
+            this.xtraTabPageEditors.Controls.Add(this.labelControl6);
+            this.xtraTabPageEditors.Controls.Add(this.dateEdit);
+            this.xtraTabPageEditors.Controls.Add(this.treeListSearchable);
+            this.xtraTabPageEditors.Controls.Add(this.btnShowInputBox);
+            this.xtraTabPageEditors.Controls.Add(this.labelControl2);
+            this.xtraTabPageEditors.Controls.Add(this.labelControl5);
+            this.xtraTabPageEditors.Controls.Add(this.lookUpDev);
+            this.xtraTabPageEditors.Controls.Add(this.labelControl3);
+            this.xtraTabPageEditors.Name = "xtraTabPageEditors";
+            this.xtraTabPageEditors.Size = new System.Drawing.Size(687, 274);
+            this.xtraTabPageEditors.Text = "Common editors";
+            // 
+            // xtraTabPageGrid
+            // 
+            this.xtraTabPageGrid.Controls.Add(this.gridControlDev);
+            this.xtraTabPageGrid.Name = "xtraTabPageGrid";
+            this.xtraTabPageGrid.Size = new System.Drawing.Size(687, 274);
+            this.xtraTabPageGrid.Text = "GridControl";
+            // 
+            // gridControlDev
+            // 
+            this.gridControlDev.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridControlDev.Location = new System.Drawing.Point(0, 0);
+            this.gridControlDev.MainView = this.bandedGridViewDev;
+            this.gridControlDev.Name = "gridControlDev";
+            this.gridControlDev.Size = new System.Drawing.Size(687, 274);
+            this.gridControlDev.TabIndex = 0;
+            this.gridControlDev.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.bandedGridViewDev});
+            // 
+            // bandedGridViewDev
+            // 
+            this.bandedGridViewDev.AllowColumnFormatSettings = false;
+            this.bandedGridViewDev.Appearance.BandPanel.Options.UseTextOptions = true;
+            this.bandedGridViewDev.Appearance.BandPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.bandedGridViewDev.Appearance.BandPanel.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.bandedGridViewDev.Appearance.HeaderPanel.Options.UseTextOptions = true;
+            this.bandedGridViewDev.Appearance.HeaderPanel.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.bandedGridViewDev.Appearance.HeaderPanel.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
+            this.bandedGridViewDev.Bands.AddRange(new DevExpress.XtraGrid.Views.BandedGrid.GridBand[] {
+            this.bandName,
+            this.bandInfo});
+            this.bandedGridViewDev.Columns.AddRange(new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn[] {
+            this.colName,
+            this.colAverageSalary,
+            this.colIsValid});
+            this.bandedGridViewDev.GridControl = this.gridControlDev;
+            this.bandedGridViewDev.Name = "bandedGridViewDev";
+            this.bandedGridViewDev.OptionsSelection.MultiSelect = true;
+            this.bandedGridViewDev.OptionsSelection.MultiSelectMode = DevExpress.XtraGrid.Views.Grid.GridMultiSelectMode.CellSelect;
+            this.bandedGridViewDev.OptionsView.ColumnAutoWidth = false;
+            // 
+            // bandName
+            // 
+            this.bandName.Columns.Add(this.colName);
+            this.bandName.Name = "bandName";
+            this.bandName.OptionsBand.ShowCaption = false;
+            this.bandName.VisibleIndex = 0;
+            this.bandName.Width = 75;
+            // 
+            // colName
+            // 
+            this.colName.Caption = "Name";
+            this.colName.FieldName = "Name";
+            this.colName.Name = "colName";
+            this.colName.Visible = true;
+            // 
+            // bandInfo
+            // 
+            this.bandInfo.Caption = "Very long band description are placed here";
+            this.bandInfo.Columns.Add(this.colAverageSalary);
+            this.bandInfo.Columns.Add(this.colIsValid);
+            this.bandInfo.Name = "bandInfo";
+            this.bandInfo.VisibleIndex = 1;
+            this.bandInfo.Width = 150;
+            // 
+            // colAverageSalary
+            // 
+            this.colAverageSalary.Caption = "Average salary";
+            this.colAverageSalary.DisplayFormat.FormatString = "f2";
+            this.colAverageSalary.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.colAverageSalary.FieldName = "AverageSalary";
+            this.colAverageSalary.Name = "colAverageSalary";
+            this.colAverageSalary.Visible = true;
+            // 
+            // colIsValid
+            // 
+            this.colIsValid.Caption = "Is valid";
+            this.colIsValid.FieldName = "IsValid";
+            this.colIsValid.Name = "colIsValid";
+            this.colIsValid.Visible = true;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(679, 265);
-            this.Controls.Add(this.cbDateType);
-            this.Controls.Add(this.labelControl7);
-            this.Controls.Add(this.maskTextEdit);
-            this.Controls.Add(this.labelControl4);
-            this.Controls.Add(this.btnShowProgressManagerControl);
-            this.Controls.Add(this.labelControl6);
-            this.Controls.Add(this.labelControl1);
-            this.Controls.Add(this.btnShowInputBox);
-            this.Controls.Add(this.labelControl5);
-            this.Controls.Add(this.labelControl3);
-            this.Controls.Add(this.lookUpDev);
-            this.Controls.Add(this.labelControl2);
-            this.Controls.Add(this.treeListSearchable);
-            this.Controls.Add(this.dateEdit);
-            this.Controls.Add(this.groupControlCheckedDev);
-            this.Controls.Add(this.passwordTextEditDev);
-            this.Controls.Add(this.dateDoubleTrackBarControlDev);
-            this.Controls.Add(this.colorPickEditDev2);
-            this.Controls.Add(this.colorPickEditDev1);
+            this.ClientSize = new System.Drawing.Size(689, 299);
+            this.Controls.Add(this.xtraTabControl);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "MainForm";
             this.ShowIcon = false;
             this.Text = "DevExpressWinFormsExtension.Samples";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.maskTextEdit.Properties)).EndInit();
@@ -335,8 +449,14 @@ namespace DevExpressWinFormsExtension.Samples
             ((System.ComponentModel.ISupportInitialize)(this.colorPickEditDev2.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.colorPickEditDev1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbDateType.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl)).EndInit();
+            this.xtraTabControl.ResumeLayout(false);
+            this.xtraTabPageEditors.ResumeLayout(false);
+            this.xtraTabPageEditors.PerformLayout();
+            this.xtraTabPageGrid.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gridControlDev)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bandedGridViewDev)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -364,6 +484,16 @@ namespace DevExpressWinFormsExtension.Samples
         private DevExpress.XtraEditors.TextEdit maskTextEdit;
         private DevExpress.XtraEditors.LabelControl labelControl7;
         private DevExpress.XtraEditors.ComboBoxEdit cbDateType;
+        private DevExpress.XtraTab.XtraTabControl xtraTabControl;
+        private DevExpress.XtraTab.XtraTabPage xtraTabPageEditors;
+        private DevExpress.XtraTab.XtraTabPage xtraTabPageGrid;
+        private DataControls.GridView.GridControlDev gridControlDev;
+        private DataControls.GridView.BandedGridViewDev bandedGridViewDev;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn colName;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn colAverageSalary;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn colIsValid;
+        private DevExpress.XtraGrid.Views.BandedGrid.GridBand bandName;
+        private DevExpress.XtraGrid.Views.BandedGrid.GridBand bandInfo;
     }
 }
 

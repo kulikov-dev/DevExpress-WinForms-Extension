@@ -3,13 +3,14 @@ using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
 using DevExpressWinFormsExtension.Utils;
-using DevExpressWinFormsExtension.DataControls.Forms.Utils;
 using DevExpressWinFormsExtension.DataControls.Extensions;
 using DevExpressWinFormsExtension.DataControls;
 using DevExpressWinFormsExtension.Samples.Data;
 using DevExpressWinFormsExtension.Helpers;
 using DevExpressWinFormsExtension.Samples.Enums;
 using DevExpress.XtraEditors;
+using DevExpressWinFormsExtension.DataControls.GridView.Utils;
+using Bogus;
 
 namespace DevExpressWinFormsExtension.Samples
 {
@@ -23,11 +24,11 @@ namespace DevExpressWinFormsExtension.Samples
         /// </summary>
         public MainForm()
         {
-            //// TODO: add GridView sample on VS 2019. DevExpress has troubles with Designer on VS 2022
             InitializeComponent();
 
             InitLookUp();
             InitTreeList();
+            InitGrid();
             InitSkins();
 
             maskTextEdit.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
@@ -39,6 +40,37 @@ namespace DevExpressWinFormsExtension.Samples
             passwordTextEditDev.IsValueEmpty();
 
             Application.ApplicationExit += Application_ApplicationExit;
+        }
+
+        private class GridInfo
+        {
+            public string Name { get; set; }
+            public double AverageSalary { get; set; }
+            public bool IsValid { get; set; }
+        }
+
+        private void InitGrid()
+        {
+            bandedGridViewDev.InitializeDefaultSettings();
+
+            var source = new List<GridInfo>();
+            var testFaker = new Faker();
+            for (var i = 0; i < 25; ++i)
+            {
+                var item = new GridInfo()
+                {
+                    Name = testFaker.Name.FullName(),
+                    AverageSalary = testFaker.Random.Double(1000, 15000),
+                    IsValid = testFaker.Random.Bool()
+                };
+                source.Add(item);
+            }
+
+            gridControlDev.DataSource = source;
+
+            //// For merging a band and a caption titles
+            new GridPainterDev(bandedGridViewDev);
+            bandedGridViewDev.BestFitBands();
         }
 
         /// <summary>
@@ -129,7 +161,7 @@ namespace DevExpressWinFormsExtension.Samples
         {
             using (var control = new CalcProgressControl())
             {
-                XtraUserControlHelper.ShowControl(null, control, "Calculator", true);
+                XtraUserControlHelper.ShowControl(this, control, "Calculator", isSizable: true);
             }
         }
 
@@ -152,6 +184,11 @@ namespace DevExpressWinFormsExtension.Samples
         private void Application_ApplicationExit(object sender, EventArgs e)
         {
             SolidBrushesCache.Dispose();
+        }
+
+        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            GridPainterDev.DisposePainter(bandedGridViewDev);
         }
     }
 }

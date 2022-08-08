@@ -20,11 +20,16 @@
   5. Optional filtration panel on top. <p align="center"> <img src="DevExpressWinFormsExtension/Resources/Samples/TreeListSearchableSample.jpg" width="200" align="center" title="Screenshot of the InputBoxValidable"> </p>
 * GridView/BandedGridView extensions:
   1. Allows merging a Column and a Band header panel;
+  ``` csharp
+  new GridPainterDev(bandedGridViewDev);  // Init merger
+  GridPainterDev.DisposePainter(bandedGridViewDev);  // Dispose merger
+  ```
   2. Improvement of 'BestFitColumns' to use width of band's title, not only columns;
   3. Improvements to work with merged cells: correct odd/even color, applying user changes to merged cells;
   4. Correct multiple checked changes for 'bool' columns with multiple selected rows;
   5. Cache for FormatRules;
-  6. Custom user column header colorizing.
+  6. Custom user column header colorizing;
+  7. Provides fast way to fill a DataTable structure based on the GridView structure.
 ### ProgressManager
   Easy way to attach ProgressBar to XtraUserControl for a long operations with user cancellation. <p align="center"> <img src="DevExpressWinFormsExtension/Resources/Samples/ProgressManagerSample.jpg" width="230" align="center" title="Screenshot of the progress for a custom control"> </p>
   ``` csharp
