@@ -2,6 +2,7 @@
 using System.ComponentModel;
 using System.Drawing;
 using DevExpress.XtraEditors;
+using DevExpressWinFormsExtension.Utils;
 
 namespace DevExpressWinFormsExtension.DataControls.LookUp
 {
@@ -28,6 +29,38 @@ namespace DevExpressWinFormsExtension.DataControls.LookUp
         public LookUpDev()
             : base()
         {
+            CustomDrawCell += LookUpDev_CustomDrawCell;
+        }
+
+        /// <summary>
+        /// Event on showing ToolTip
+        /// </summary>
+        public event EventHandler BeforeShowingTooltip
+        {
+            add
+            {
+                Properties.BeforeShowingTooltip += value;
+            }
+            remove
+            {
+                Properties.BeforeShowingTooltip -= value;
+            }
+        }
+
+        /// <summary>
+        /// Description field
+        /// </summary>
+        public string DescriptionField
+        {
+            set
+            {
+                Properties.DescriptionField = value;
+                OnPropertiesChanged();
+            }
+            get
+            {
+                return Properties.DescriptionField;
+            }
         }
 
         /// <summary>
@@ -63,33 +96,22 @@ namespace DevExpressWinFormsExtension.DataControls.LookUp
         }
 
         /// <summary>
-        /// Description field
+        /// Event on custom draw cell
         /// </summary>
-        public string DescriptionField
+        /// <param name="sender"> Source </param>
+        /// <param name="e"> Parameters </param>
+        private void LookUpDev_CustomDrawCell(object sender, DevExpress.XtraEditors.Popup.LookUpCustomDrawCellArgs e)
         {
-            set
+            var item = e.Row as ILookUpSplitableItem;
+            if (item != null && item.IsSplitter)
             {
-                Properties.DescriptionField = value;
-                OnPropertiesChanged();
-            }
-            get
-            {
-                return Properties.DescriptionField;
-            }
-        }
+                e.DefaultDraw();
+                using (var pen = new Pen(SkinHelper.TranslateColor(Color.LightGray)))
+                {
+                    e.Graphics.DrawLine(pen, new Point(e.Bounds.X, e.Bounds.Bottom), new Point(e.Bounds.Right, e.Bounds.Bottom));
+                }
 
-        /// <summary>
-        /// Event on showing ToolTip
-        /// </summary>
-        public event EventHandler BeforeShowingTooltip
-        {
-            add
-            {
-                Properties.BeforeShowingTooltip += value;
-            }
-            remove
-            {
-                Properties.BeforeShowingTooltip -= value;
+                e.Handled = true;
             }
         }
     }

@@ -14,7 +14,6 @@ using DevExpressWinFormsExtension.DataControls.ColorPickEdit;
 using DevExpressWinFormsExtension.DataControls.Extensions;
 using DevExpressWinFormsExtension.DataControls.GridView.Utils;
 using System;
-using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;

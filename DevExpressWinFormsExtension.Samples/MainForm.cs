@@ -107,7 +107,7 @@ namespace DevExpressWinFormsExtension.Samples
             var source = new List<MusicStyleDataItem>
             {
                 new MusicStyleDataItem("Rock", "Rock music is a broad genre of popular music that originated as \"rock and roll\" in the United States in the late 1940s and early 1950s"),
-                new MusicStyleDataItem("Pop", "Pop music is a genre of popular music that originated in its modern form during the mid-1950s in the United States and the United Kingdom."),
+                new MusicStyleDataItem("Pop", "Pop music is a genre of popular music that originated in its modern form during the mid-1950s in the United States and the United Kingdom.", isSplitter: true),
                 new MusicStyleDataItem("Funk", "Funk is a music genre that originated within the African-American communities in the mid-1960s, when musicians created a rhythmic, danceable, new form of music influenced by Jazz, R&B, Soul music")
             };
 
