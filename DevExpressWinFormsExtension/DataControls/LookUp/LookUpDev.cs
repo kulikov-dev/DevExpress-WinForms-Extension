@@ -102,8 +102,7 @@ namespace DevExpressWinFormsExtension.DataControls.LookUp
         /// <param name="e"> Parameters </param>
         private void LookUpDev_CustomDrawCell(object sender, DevExpress.XtraEditors.Popup.LookUpCustomDrawCellArgs e)
         {
-            var item = e.Row as ILookUpSplitableItem;
-            if (item != null && item.IsSplitter)
+            if (e.Row is ILookUpSplitableItem item && item.IsSplitter)
             {
                 e.DefaultDraw();
                 using (var pen = new Pen(SkinHelper.TranslateColor(Color.LightGray)))

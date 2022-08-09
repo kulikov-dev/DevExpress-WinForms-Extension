@@ -1,9 +1,12 @@
 ﻿using System;
 using System.ComponentModel;
+using System.Drawing;
 using DevExpress.XtraEditors.Drawing;
+using DevExpress.XtraEditors.Popup;
 using DevExpress.XtraEditors.Registrator;
 using DevExpress.XtraEditors.Repository;
 using DevExpress.XtraEditors.ViewInfo;
+using DevExpressWinFormsExtension.Utils;
 
 namespace DevExpressWinFormsExtension.DataControls.LookUp
 {
@@ -15,6 +18,11 @@ namespace DevExpressWinFormsExtension.DataControls.LookUp
     [UserRepositoryItem("RepositoryItemLookUpDev")]
     public class RepositoryItemLookUpDev : RepositoryItemLookUpEdit
     {
+        /// <summary>
+        /// Custom lookup control name
+        /// </summary>
+        internal const string LookUpEditHintsName = "LookUpEditHints";
+
         /// <summary>
         /// Description field
         /// </summary>
@@ -42,29 +50,18 @@ namespace DevExpressWinFormsExtension.DataControls.LookUp
         }
 
         /// <summary>
-        /// Custom lookup control name
+        /// Event before showing tooltip
         /// </summary>
-        public const string LookUpEditHintsName = "LookUpEditHints";
-
-        /// <summary>
-        /// Custom lookup control name
-        /// </summary>
-        public override string EditorTypeName
+        public event EventHandler BeforeShowingTooltip
         {
-            get
+            add
             {
-                return LookUpEditHintsName;
+                Events.AddHandler(beforeShowingTooltipHandler, value);
             }
-        }
-
-        /// <summary>
-        /// Custom editor registration
-        /// </summary>
-        public static void RegisterLookUpEditHints()
-        {
-            EditorRegistrationInfo.Default.Editors.Add(new EditorClassInfo(
-                LookUpEditHintsName, typeof(LookUpDev), typeof(RepositoryItemLookUpDev),
-                typeof(LookUpEditViewInfo), new ButtonEditPainter(), true));
+            remove
+            {
+                Events.RemoveHandler(beforeShowingTooltipHandler, value);
+            }
         }
 
         /// <summary>
@@ -84,28 +81,24 @@ namespace DevExpressWinFormsExtension.DataControls.LookUp
         }
 
         /// <summary>
-        /// Event before showing tooltip
+        /// Custom editor registration
         /// </summary>
-        public event EventHandler BeforeShowingTooltip
+        public static void RegisterLookUpEditHints()
         {
-            add
-            {
-                Events.AddHandler(beforeShowingTooltipHandler, value);
-            }
-            remove
-            {
-                Events.RemoveHandler(beforeShowingTooltipHandler, value);
-            }
+            EditorRegistrationInfo.Default.Editors.Add(new EditorClassInfo(
+                LookUpEditHintsName, typeof(LookUpDev), typeof(RepositoryItemLookUpDev),
+                typeof(LookUpEditViewInfo), new ButtonEditPainter(), true));
         }
 
         /// <summary>
-        /// Event before showing tooltip
+        /// Custom lookup control name
         /// </summary>
-        /// <param name="e"> Parameters </param>
-        protected internal virtual void OnBeforeShowingTooltip(EventArgs e)
+        public override string EditorTypeName
         {
-            var handler = (EventHandler)Events[beforeShowingTooltipHandler];
-            handler?.Invoke(GetEventSender(), e);
+            get
+            {
+                return LookUpEditHintsName;
+            }
         }
 
         /// <summary>
@@ -129,6 +122,36 @@ namespace DevExpressWinFormsExtension.DataControls.LookUp
             finally
             {
                 EndUpdate();
+            }
+        }
+
+        /// <summary>
+        /// Event before showing tooltip
+        /// </summary>
+        /// <param name="e"> Parameters </param>
+        protected internal virtual void OnBeforeShowingTooltip(EventArgs e)
+        {
+            var handler = (EventHandler)Events[beforeShowingTooltipHandler];
+            handler?.Invoke(GetEventSender(), e);
+        }
+
+        /// <summary>
+        /// Event on custom draw cell
+        /// </summary>
+        /// <param name="sender"> Source </param>
+        /// <param name="e"> Parameters </param>
+        protected override void RaiseCustomDrawCell(LookUpCustomDrawCellArgs e)
+        {
+            base.RaiseCustomDrawCell(e);
+            if (e.Row is ILookUpSplitableItem item && item.IsSplitter)
+            {
+                e.DefaultDraw();
+                using (var pen = new Pen(SkinHelper.TranslateColor(Color.LightGray)))
+                {
+                    e.Graphics.DrawLine(pen, new Point(e.Bounds.X, e.Bounds.Bottom), new Point(e.Bounds.Right, e.Bounds.Bottom));
+                }
+
+                e.Handled = true;
             }
         }
     }
