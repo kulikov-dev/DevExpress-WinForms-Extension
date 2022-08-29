@@ -73,6 +73,8 @@ namespace DevExpressWinFormsExtension.Samples
             this.colAverageSalary = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.colIsValid = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.colHistogram = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
+            this.btnShowPropertyGridControl = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.maskTextEdit.Properties)).BeginInit();
@@ -94,7 +96,7 @@ namespace DevExpressWinFormsExtension.Samples
             // dateEdit
             // 
             this.dateEdit.EditValue = null;
-            this.dateEdit.Location = new System.Drawing.Point(266, 91);
+            this.dateEdit.Location = new System.Drawing.Point(287, 91);
             this.dateEdit.Name = "dateEdit";
             this.dateEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -179,7 +181,7 @@ namespace DevExpressWinFormsExtension.Samples
             // 
             this.maskTextEdit.Location = new System.Drawing.Point(132, 117);
             this.maskTextEdit.Name = "maskTextEdit";
-            this.maskTextEdit.Size = new System.Drawing.Size(254, 20);
+            this.maskTextEdit.Size = new System.Drawing.Size(275, 20);
             this.maskTextEdit.TabIndex = 25;
             // 
             // labelControl7
@@ -199,7 +201,7 @@ namespace DevExpressWinFormsExtension.Samples
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.lookUpDev.Properties.DescriptionField = "";
             this.lookUpDev.Properties.ShowHeader = false;
-            this.lookUpDev.Size = new System.Drawing.Size(254, 20);
+            this.lookUpDev.Size = new System.Drawing.Size(275, 20);
             this.lookUpDev.TabIndex = 10;
             // 
             // treeListSearchable
@@ -259,14 +261,14 @@ namespace DevExpressWinFormsExtension.Samples
             this.passwordTextEditDev.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "Show password", "Visible", null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.passwordTextEditDev.Properties.PasswordChar = '*';
-            this.passwordTextEditDev.Size = new System.Drawing.Size(258, 24);
+            this.passwordTextEditDev.Size = new System.Drawing.Size(279, 24);
             this.passwordTextEditDev.TabIndex = 7;
             // 
             // dateDoubleTrackBarControlDev
             // 
             this.dateDoubleTrackBarControlDev.AutoMiddleDate = false;
             this.dateDoubleTrackBarControlDev.ButtonSize = new System.Drawing.Size(12, 26);
-            this.dateDoubleTrackBarControlDev.LeftDate = new System.DateTime(2021, 8, 9, 0, 0, 0, 0);
+            this.dateDoubleTrackBarControlDev.LeftDate = new System.DateTime(2021, 8, 29, 0, 0, 0, 0);
             this.dateDoubleTrackBarControlDev.LengthMinimum = 0;
             this.dateDoubleTrackBarControlDev.Location = new System.Drawing.Point(422, 11);
             this.dateDoubleTrackBarControlDev.MaxDateLimit = new System.DateTime(2022, 7, 26, 0, 0, 0, 0);
@@ -282,7 +284,7 @@ namespace DevExpressWinFormsExtension.Samples
             // colorPickEditDev2
             // 
             this.colorPickEditDev2.EditValue = System.Drawing.Color.Empty;
-            this.colorPickEditDev2.Location = new System.Drawing.Point(266, 65);
+            this.colorPickEditDev2.Location = new System.Drawing.Point(287, 65);
             this.colorPickEditDev2.Name = "colorPickEditDev2";
             this.colorPickEditDev2.Properties.AutomaticColor = System.Drawing.Color.Black;
             this.colorPickEditDev2.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -326,6 +328,8 @@ namespace DevExpressWinFormsExtension.Samples
             // 
             // xtraTabPageEditors
             // 
+            this.xtraTabPageEditors.Controls.Add(this.btnShowPropertyGridControl);
+            this.xtraTabPageEditors.Controls.Add(this.labelControl8);
             this.xtraTabPageEditors.Controls.Add(this.labelControl1);
             this.xtraTabPageEditors.Controls.Add(this.cbDateType);
             this.xtraTabPageEditors.Controls.Add(this.colorPickEditDev1);
@@ -443,6 +447,23 @@ namespace DevExpressWinFormsExtension.Samples
             this.colHistogram.Visible = true;
             this.colHistogram.Width = 200;
             // 
+            // labelControl8
+            // 
+            this.labelControl8.Location = new System.Drawing.Point(226, 148);
+            this.labelControl8.Name = "labelControl8";
+            this.labelControl8.Size = new System.Drawing.Size(100, 13);
+            this.labelControl8.TabIndex = 28;
+            this.labelControl8.Text = "PropertyGridControl:";
+            // 
+            // btnShowPropertyGridControl
+            // 
+            this.btnShowPropertyGridControl.Location = new System.Drawing.Point(332, 143);
+            this.btnShowPropertyGridControl.Name = "btnShowPropertyGridControl";
+            this.btnShowPropertyGridControl.Size = new System.Drawing.Size(75, 23);
+            this.btnShowPropertyGridControl.TabIndex = 29;
+            this.btnShowPropertyGridControl.Text = "Show";
+            this.btnShowPropertyGridControl.Click += new System.EventHandler(this.btnShowPropertyGridControl_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -510,6 +531,8 @@ namespace DevExpressWinFormsExtension.Samples
         private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn colHistogram;
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand bandName;
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand bandInfo;
+        private DevExpress.XtraEditors.SimpleButton btnShowPropertyGridControl;
+        private DevExpress.XtraEditors.LabelControl labelControl8;
     }
 }
 

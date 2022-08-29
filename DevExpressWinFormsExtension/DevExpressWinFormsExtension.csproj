@@ -53,10 +53,12 @@
     <Reference Include="DevExpress.XtraEditors.v22.1, Version=22.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraGrid.v22.1, Version=22.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraTreeList.v22.1, Version=22.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraVerticalGrid.v22.1, Version=22.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="LRUCache">
       <HintPath>..\..\LRUCache\src\LRUCache\bin\Debug\LRUCache.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Design" />
     <Reference Include="System.Drawing" />
@@ -71,6 +73,7 @@
   <ItemGroup>
     <Compile Include="DataControls\ColorPickEdit\ColorPickEditUtils.cs" />
     <Compile Include="DataControls\Extensions\GridViewExtension.cs" />
+    <Compile Include="DataControls\Extensions\PropertyGridControlExtension.cs" />
     <Compile Include="DataControls\GridView\BandedGridViewDev.cs">
       <SubType>Component</SubType>
     </Compile>

@@ -12,6 +12,7 @@ using DevExpress.XtraEditors;
 using DevExpressWinFormsExtension.DataControls.GridView.Utils;
 using Bogus;
 using System.Linq;
+using DevExpress.XtraVerticalGrid;
 
 namespace DevExpressWinFormsExtension.Samples
 {
@@ -61,7 +62,7 @@ namespace DevExpressWinFormsExtension.Samples
                     Name = testFaker.Name.FullName(),
                     AverageSalary = testFaker.Random.Double(1000, 15000),
                     IsValid = testFaker.Random.Bool(),
-                    Histogram = Enumerable.Repeat(0, 1000).Select(x=> testFaker.Random.Double(0, 1000)).ToList()
+                    Histogram = Enumerable.Repeat(0, 1000).Select(x => testFaker.Random.Double(0, 1000)).ToList()
                 };
 
                 source.Add(item);
@@ -141,6 +142,31 @@ namespace DevExpressWinFormsExtension.Samples
         private void btnShowInputBox_Click(object sender, EventArgs e)
         {
             InputBoxValidableDev.Show("New user", "Input your username:", CustomInputBoxValidator);
+        }
+
+        /// <summary>
+        /// Event on show PropertyGridControl
+        /// </summary>
+        /// <param name="sender"> Source </param>
+        /// <param name="e"> Parameters </param>
+        private void btnShowPropertyGridControl_Click(object sender, EventArgs e)
+        {
+            var control = new PropertyGridControl
+            {
+                Width = 300,
+                Height = 150,
+                Dock = DockStyle.Fill,
+                SelectedObject = new ExtendedRowInfo
+                {
+                    Price = 5.5M,
+                    PercentPrice = 80,
+                    Use= true,
+                    InPercent = false
+                }
+            };
+
+            control.RetrieveFields();
+            XtraUserControlHelper.ShowControl(this, control, "Sorting by Display order sample", isSizable: false);
         }
 
         /// <summary>
