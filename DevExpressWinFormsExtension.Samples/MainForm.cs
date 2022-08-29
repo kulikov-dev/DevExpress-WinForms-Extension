@@ -160,12 +160,13 @@ namespace DevExpressWinFormsExtension.Samples
                 {
                     Price = 5.5M,
                     PercentPrice = 80,
-                    Use= true,
+                    Use = true,
                     InPercent = false
                 }
             };
 
             control.RetrieveFields();
+            control.UpdateFieldsOrderByDisplayOrder();
             XtraUserControlHelper.ShowControl(this, control, "Sorting by Display order sample", isSizable: false);
         }
 

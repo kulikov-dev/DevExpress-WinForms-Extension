@@ -7,12 +7,16 @@ using DevExpress.XtraVerticalGrid.Rows;
 
 namespace DevExpressWinFormsExtension.DataControls.Extensions
 {
+    /// <summary>
+    /// Extensions for PropertyGridControl
+    /// </summary>
     public static class PropertyGridControlExtension
     {
         /// <summary>
         /// Reorder field rows by a "Display/Order" attribute
         /// </summary>
         /// <param name="control"> PropertyGridControl </param>
+        /// <remarks> Was in v21 DevExpress. Fixed in v22. </remarks>
         public static void UpdateFieldsOrderByDisplayOrder(this PropertyGridControl control)
         {
             control.BeginUpdate();
