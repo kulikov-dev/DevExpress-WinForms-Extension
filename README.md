@@ -11,7 +11,13 @@
 * PasswordTextEditDev. The extension for working with passwords, allows user to show/hide input characters. <p align="center"> <img src="DevExpressWinFormsExtension/Resources/Samples/PasswordTextEditSample.jpg" width="150" align="center" title="Screenshot of the PasswordTextEdit"> </p>
 * InputBoxValidableDev. InputBox with possibility of using custom function for user input validation. <p align="center"> <img src="DevExpressWinFormsExtension/Resources/Samples/InputBoxValidableSample.jpg" width="250" align="center" title="Screenshot of the InputBoxValidable"> </p>
 * GroupControlCheckedDev. GroupControl with checkbox in header, allows user to disable/enable all controls in the GroupControl. <p align="center"> <img src="DevExpressWinFormsExtension/Resources/Samples/GroupControlCheckedSample.jpg" width="250" align="center" title="Screenshot of the GroupControlChecked"> </p>
-* LookUpDev, RepositoryItemLookUpDev. The extension that allows to show hint for each element in the editor. <p align="center"> <img src="DevExpressWinFormsExtension/Resources/Samples/LookUpSample.jpg" width="320" align="center" title="Screenshot of the LookUpDev"> </p>
+* LookUpDev, RepositoryItemLookUpDev. The extensions for the standard component which supports:
+  1. Show hints for each element in an editor;
+  2. Draw splitter between elements (for example, to realize LRU spiltting). Just add interface to your DataSource item:
+  ``` csharp
+  internal struct MusicStyleDataItem : ILookUpSplitableItem
+  ``` 
+  <p align="center"> <img src="DevExpressWinFormsExtension/Resources/Samples/LookUpSample.jpg" width="320" align="center" title="Screenshot of hints in a LookUpDev"> </p> <p align="center"> <img src="DevExpressWinFormsExtension/Resources/Samples/LookUpSplitterSample.jpg" width="250" align="center" title="Screenshot of splitting in a LookUpDev"> </p>
 * TreeListDev, TreeListSearchable. The extensions for the standard component which supports:
   1. Hotkes for fast check/uncheck, collapse/expand nodes;
   2. Correct bounds for nodes without stateImage;
@@ -35,7 +41,7 @@
   7. Provides fast way to fill a DataTable structure based on the GridView structure;
   8. Custom user column header colorizing. <p align="center"> <img src="DevExpressWinFormsExtension/Resources/Samples/GridControlSample.jpg" width="550" align="center" title="Grid control sample"> </p>   <p align="center"> <img src="DevExpressWinFormsExtension/Resources/Samples/GridHistogramSample.jpg" width="150" align="center" title="Screenshot of the in-place histogram"> </p> 
 ### ProgressManager
-  Easy way to attach ProgressBar to XtraUserControl for a long operations with user cancellation. <p align="center"> <img src="DevExpressWinFormsExtension/Resources/Samples/ProgressManagerSample.jpg" width="280" align="center" title="Screenshot of the progress for a custom control"> </p>
+  Easy way to attach a ProgressBar to any XtraUserControl for long operations with user cancellation. <p align="center"> <img src="DevExpressWinFormsExtension/Resources/Samples/ProgressManagerSample.jpg" width="280" align="center" title="Screenshot of the progress for a custom control"> </p>
   ``` csharp
             var handler = ProgressManager.InitMarquee(this);
 
