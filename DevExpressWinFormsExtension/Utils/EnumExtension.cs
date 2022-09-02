@@ -51,7 +51,7 @@ namespace DevExpressWinFormsExtension.Utils
         public static object FromCaption<T>(Type type, string caption, object defaultValue = null)
             where T : DescriptionAttribute
         {
-            if (TryGetCaption<T>(type, caption, out object value))
+            if (TryGetCaption<T>(type, caption, out var value))
             {
                 return value;
             }

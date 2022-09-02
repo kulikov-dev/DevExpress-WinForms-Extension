@@ -157,7 +157,7 @@ namespace DevExpressWinFormsExtension.DataControls.GridView.Utils
         /// <param name="e"> Parameters </param>
         private void GridControl_PaintEx(object sender, PaintExEventArgs e)
         {
-            foreach (GridBand band in mergedBands)
+            foreach (var band in mergedBands)
             {
                 var currentBand = band;
                 while (currentBand.Columns.Count == 0 && currentBand.Children.Any())
@@ -217,9 +217,9 @@ namespace DevExpressWinFormsExtension.DataControls.GridView.Utils
 
             colInfo.Cache = cache;
 
-            int top = bandInfo.Bounds.Top;
+            var top = bandInfo.Bounds.Top;
             var rect = colInfo.Bounds;
-            int delta = rect.Top - top;
+            var delta = rect.Top - top;
             rect.Y = top;
             rect.Height += delta;
             colInfo.Bounds = rect;

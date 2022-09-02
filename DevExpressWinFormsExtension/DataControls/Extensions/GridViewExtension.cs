@@ -144,7 +144,7 @@ namespace DevExpressWinFormsExtension.DataControls.Extensions
         /// <param name="graphics"> Drawing context </param>
         private static void UpdateMinWidth(IEnumerable<GridBand> bands, Graphics graphics)
         {
-            foreach (GridBand band in bands)
+            foreach (var band in bands)
             {
                 if (string.IsNullOrWhiteSpace(band.Caption))
                 {
@@ -206,7 +206,7 @@ namespace DevExpressWinFormsExtension.DataControls.Extensions
                 return Rectangle.Empty;
             }
 
-            for (int i = 1; i < cell.MergedCell.MergedCells.Count; i++)
+            for (var i = 1; i < cell.MergedCell.MergedCells.Count; i++)
             {
                 bounds.Height += cell.MergedCell.MergedCells[i].Bounds.Height;
             }

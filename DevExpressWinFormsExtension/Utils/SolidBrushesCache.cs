@@ -29,7 +29,7 @@ namespace DevExpressWinFormsExtension.Utils
         public static SolidBrush GetBrushByColor(Color color)
         {
             var colorValue = color.GetHashCode();
-            brushes.TryGetValue(colorValue, out SolidBrush brush);
+            brushes.TryGetValue(colorValue, out var brush);
             if (brush != null)
             {
                 //// Check if brush was disposed accidently

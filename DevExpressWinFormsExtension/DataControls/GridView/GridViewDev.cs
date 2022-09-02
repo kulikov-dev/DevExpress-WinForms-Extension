@@ -272,7 +272,7 @@ namespace DevExpressWinFormsExtension.DataControls.GridView
                 if (fEditingCell.MergedCell != null)
                 {
                     var currentValue = ExtractEditingValue(fEditingCell.ColumnInfo.Column, EditingValue);
-                    for (int i = 0; i < fEditingCell.MergedCell.MergedCells.Count; i++)
+                    for (var i = 0; i < fEditingCell.MergedCell.MergedCells.Count; i++)
                     {
                         SetRowCellValue(fEditingCell.RowHandle + i, fEditingCell.Column, currentValue);
                     }
@@ -584,7 +584,7 @@ namespace DevExpressWinFormsExtension.DataControls.GridView
         {
             if (e.Column.DisplayFormat.FormatType == FormatType.Numeric)
             {
-                var isParsed = double.TryParse(e.Value?.ToString() ?? string.Empty, out double value);
+                var isParsed = double.TryParse(e.Value?.ToString() ?? string.Empty, out var value);
                 if (!isParsed || double.IsNaN(value) || double.IsInfinity(value))
                 {
                     e.DisplayText = string.Empty;
@@ -592,7 +592,7 @@ namespace DevExpressWinFormsExtension.DataControls.GridView
             }
             else if (e.Column.DisplayFormat.FormatType == FormatType.DateTime)
             {
-                var isParsed = DateTime.TryParse(e.Value?.ToString() ?? string.Empty, out DateTime value);
+                var isParsed = DateTime.TryParse(e.Value?.ToString() ?? string.Empty, out var value);
                 if (isParsed || value == DateTime.MinValue || value == DateTime.MaxValue)
                 {
                     e.DisplayText = string.Empty;
@@ -663,7 +663,7 @@ namespace DevExpressWinFormsExtension.DataControls.GridView
 
             cell = cell.MergedCell.MergedCells[0];
             fEditingCell = cell;
-            Rectangle bounds = ViewInfo.GetMergedEditorBounds(cell);
+            var bounds = ViewInfo.GetMergedEditorBounds(cell);
             if (bounds.IsEmpty)
             {
                 return;

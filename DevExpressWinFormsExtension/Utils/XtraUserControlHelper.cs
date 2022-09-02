@@ -215,7 +215,7 @@ namespace DevExpressWinFormsExtension.Utils
         private static void PutControlsOnFormFooter(ShowControlParentForm parentForm, List<BaseControl> childrenControls, int acceptButtonIndex)
         {
             var orderedControls = (from button in childrenControls
-                                   orderby (button.Tag != null && double.TryParse(button.Tag.ToString(), out double order) ? double.Parse(button.Tag.ToString()) : 1)
+                                   orderby (button.Tag != null && double.TryParse(button.Tag.ToString(), out var order) ? double.Parse(button.Tag.ToString()) : 1)
                                    select button).ToList();
 
             var footerMargin = parentForm.FormBorderStyle == FormBorderStyle.Sizable || parentForm.FormBorderStyle == FormBorderStyle.SizableToolWindow ? 10 : 0;
@@ -225,7 +225,7 @@ namespace DevExpressWinFormsExtension.Utils
             for (var i = orderedControls.Count - 1; i >= 0; i--)
             {
                 var control = orderedControls[i];
-                var order = control.Tag != null && double.TryParse(control.Tag.ToString(), out double orderValue) && orderValue < 0 ? orderValue : 0;
+                var order = control.Tag != null && double.TryParse(control.Tag.ToString(), out var orderValue) && orderValue < 0 ? orderValue : 0;
                 if (order < 0)
                 {
                     control.Location = new Point(rightPosition, parentForm.ClientSize.Height - control.Height - formButtonsMargin);
