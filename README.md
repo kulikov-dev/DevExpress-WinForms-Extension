@@ -124,3 +124,4 @@
 	_mdiTabsDragHelper = new MDITabsDragHelper(documentManager);
 	_mdiTabsDragHelper.SelectNewPageOnDrag = true;
   ```
+* NaturalStringComparer. Allows to do natural comparing/sort. DevExpress has it's own NaturalComparer, however it's not work for my case, such strings: 'S_505' and 'S_0505' will equal in DevExpress. But it shouldn't be.
