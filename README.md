@@ -125,3 +125,4 @@
 	_mdiTabsDragHelper.SelectNewPageOnDrag = true;
   ```
 * NaturalStringComparer. Allows to do natural comparing/sort. DevExpress has it's own NaturalComparer, however it's not work for my case, such strings: 'S_505' and 'S_0505' will equal in DevExpress. But it shouldn't be.
+* FormHelper. Give an opportunity to find, get and focus on a specific form with a specific title and tag. It is often used when you need to show a modal window only once.
