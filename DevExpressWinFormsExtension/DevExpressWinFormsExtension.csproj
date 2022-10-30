@@ -109,6 +109,7 @@
       <DependentUpon>ProgressControl.cs</DependentUpon>
     </Compile>
     <Compile Include="Utils\ColorExtension.cs" />
+    <Compile Include="Utils\FormHelper.cs" />
     <Compile Include="Utils\MDITabsDragHelper.cs" />
     <Compile Include="Utils\NaturalStringComparer.cs" />
     <Compile Include="Utils\RegexMaskHelper.cs" />
