@@ -19,7 +19,7 @@ namespace DevExpressWinFormsExtension.Samples
     /// <summary>
     /// Main form of the application
     /// </summary>
-    public partial class MainForm : Form
+    public partial class MainForm : XtraForm
     {
         /// <summary>
         /// Parameterless constructor
@@ -222,6 +222,11 @@ namespace DevExpressWinFormsExtension.Samples
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             GridPainterDev.DisposePainter(bandedGridViewDev);
+        }
+
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
+            ControlScreenshotCapture.GetScreenshot(this);
         }
     }
 }

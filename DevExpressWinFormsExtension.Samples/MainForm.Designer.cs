@@ -64,6 +64,9 @@ namespace DevExpressWinFormsExtension.Samples
             this.cbDateType = new DevExpress.XtraEditors.ComboBoxEdit();
             this.xtraTabControl = new DevExpress.XtraTab.XtraTabControl();
             this.xtraTabPageEditors = new DevExpress.XtraTab.XtraTabPage();
+            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnShowPropertyGridControl = new DevExpress.XtraEditors.SimpleButton();
+            this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
             this.xtraTabPageGrid = new DevExpress.XtraTab.XtraTabPage();
             this.gridControlDev = new DevExpressWinFormsExtension.DataControls.GridView.GridControlDev();
             this.bandedGridViewDev = new DevExpressWinFormsExtension.DataControls.GridView.BandedGridViewDev();
@@ -73,8 +76,6 @@ namespace DevExpressWinFormsExtension.Samples
             this.colAverageSalary = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.colIsValid = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.colHistogram = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
-            this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
-            this.btnShowPropertyGridControl = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.maskTextEdit.Properties)).BeginInit();
@@ -268,7 +269,7 @@ namespace DevExpressWinFormsExtension.Samples
             // 
             this.dateDoubleTrackBarControlDev.AutoMiddleDate = false;
             this.dateDoubleTrackBarControlDev.ButtonSize = new System.Drawing.Size(12, 26);
-            this.dateDoubleTrackBarControlDev.LeftDate = new System.DateTime(2021, 8, 29, 0, 0, 0, 0);
+            this.dateDoubleTrackBarControlDev.LeftDate = new System.DateTime(2021, 10, 31, 0, 0, 0, 0);
             this.dateDoubleTrackBarControlDev.LengthMinimum = 0;
             this.dateDoubleTrackBarControlDev.Location = new System.Drawing.Point(422, 11);
             this.dateDoubleTrackBarControlDev.MaxDateLimit = new System.DateTime(2022, 7, 26, 0, 0, 0, 0);
@@ -328,6 +329,7 @@ namespace DevExpressWinFormsExtension.Samples
             // 
             // xtraTabPageEditors
             // 
+            this.xtraTabPageEditors.Controls.Add(this.simpleButton1);
             this.xtraTabPageEditors.Controls.Add(this.btnShowPropertyGridControl);
             this.xtraTabPageEditors.Controls.Add(this.labelControl8);
             this.xtraTabPageEditors.Controls.Add(this.labelControl1);
@@ -352,6 +354,32 @@ namespace DevExpressWinFormsExtension.Samples
             this.xtraTabPageEditors.Name = "xtraTabPageEditors";
             this.xtraTabPageEditors.Size = new System.Drawing.Size(687, 274);
             this.xtraTabPageEditors.Text = "Common editors";
+            // 
+            // simpleButton1
+            // 
+            this.simpleButton1.Location = new System.Drawing.Point(13, 230);
+            this.simpleButton1.Name = "simpleButton1";
+            this.simpleButton1.Size = new System.Drawing.Size(109, 23);
+            this.simpleButton1.TabIndex = 30;
+            this.simpleButton1.Text = "Capture screenshot";
+            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
+            // 
+            // btnShowPropertyGridControl
+            // 
+            this.btnShowPropertyGridControl.Location = new System.Drawing.Point(332, 143);
+            this.btnShowPropertyGridControl.Name = "btnShowPropertyGridControl";
+            this.btnShowPropertyGridControl.Size = new System.Drawing.Size(75, 23);
+            this.btnShowPropertyGridControl.TabIndex = 29;
+            this.btnShowPropertyGridControl.Text = "Show";
+            this.btnShowPropertyGridControl.Click += new System.EventHandler(this.btnShowPropertyGridControl_Click);
+            // 
+            // labelControl8
+            // 
+            this.labelControl8.Location = new System.Drawing.Point(226, 148);
+            this.labelControl8.Name = "labelControl8";
+            this.labelControl8.Size = new System.Drawing.Size(100, 13);
+            this.labelControl8.TabIndex = 28;
+            this.labelControl8.Text = "PropertyGridControl:";
             // 
             // xtraTabPageGrid
             // 
@@ -447,23 +475,6 @@ namespace DevExpressWinFormsExtension.Samples
             this.colHistogram.Visible = true;
             this.colHistogram.Width = 200;
             // 
-            // labelControl8
-            // 
-            this.labelControl8.Location = new System.Drawing.Point(226, 148);
-            this.labelControl8.Name = "labelControl8";
-            this.labelControl8.Size = new System.Drawing.Size(100, 13);
-            this.labelControl8.TabIndex = 28;
-            this.labelControl8.Text = "PropertyGridControl:";
-            // 
-            // btnShowPropertyGridControl
-            // 
-            this.btnShowPropertyGridControl.Location = new System.Drawing.Point(332, 143);
-            this.btnShowPropertyGridControl.Name = "btnShowPropertyGridControl";
-            this.btnShowPropertyGridControl.Size = new System.Drawing.Size(75, 23);
-            this.btnShowPropertyGridControl.TabIndex = 29;
-            this.btnShowPropertyGridControl.Text = "Show";
-            this.btnShowPropertyGridControl.Click += new System.EventHandler(this.btnShowPropertyGridControl_Click);
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -533,6 +544,7 @@ namespace DevExpressWinFormsExtension.Samples
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand bandInfo;
         private DevExpress.XtraEditors.SimpleButton btnShowPropertyGridControl;
         private DevExpress.XtraEditors.LabelControl labelControl8;
+        private DevExpress.XtraEditors.SimpleButton simpleButton1;
     }
 }
 
