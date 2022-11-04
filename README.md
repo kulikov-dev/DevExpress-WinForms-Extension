@@ -127,3 +127,5 @@
   ```
 * NaturalStringComparer. Allows to do natural comparing/sort. DevExpress has it's own NaturalComparer, however it's not work for my case, such strings: 'S_505' and 'S_0505' will equal in DevExpress. But it shouldn't be.
 * FormHelper. Give an opportunity to find, get and focus on a specific form with a specific title and tag. It is often used when you need to show a modal window only once.
+* ControlScreenshotCapture. Class, which allows to capture screenshot from each sub-control/XtraTabPage/MDI form. On the screenshot a user selected the DateDoubleTrackbarControlDev component on the form and got image of it.
+<p align="center"> <img src="DevExpressWinFormsExtension/Resources/Samples/ScreenshotCaptureSample.jpg" width="550" align="center" title="Screenshot of the screenshot capturing"> </p> 
