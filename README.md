@@ -40,6 +40,7 @@
   ``` 
   7. Provides fast way to fill a DataTable structure based on the GridView structure;
   8. Custom user column header colorizing. <p align="center"> <img src="DevExpressWinFormsExtension/Resources/Samples/GridControlSample.jpg" width="550" align="center" title="Grid control sample"> </p>   <p align="center"> <img src="DevExpressWinFormsExtension/Resources/Samples/GridHistogramSample.jpg" width="150" align="center" title="Screenshot of the in-place histogram"> </p> 
+  9. Export full GridView table as an image ('GetAsImage'). DevExpress allows to export as an image only visible part of GridView, this method helps to export it all.
 ### ProgressManager
   Easy way to attach a ProgressBar to any XtraUserControl for long operations with user cancellation. <p align="center"> <img src="DevExpressWinFormsExtension/Resources/Samples/ProgressManagerSample.jpg" width="280" align="center" title="Screenshot of the progress for a custom control"> </p>
   ``` csharp
