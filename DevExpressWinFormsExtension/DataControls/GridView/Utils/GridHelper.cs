@@ -300,7 +300,7 @@ namespace DevExpressWinFormsExtension.DataControls.GridView.Utils
         /// </summary>
         /// <param name="gridView"> GridView </param>
         /// <returns> Bands depth </returns>
-        private static int GetBandsDepth(BandedGridView gridView)
+        internal static int GetBandsDepth(BandedGridView gridView)
         {
             var headerRows = 1;
 

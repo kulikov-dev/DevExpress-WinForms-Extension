@@ -455,6 +455,30 @@ namespace DevExpressWinFormsExtension.DataControls.GridView
                     OptionsClipboard.CopyColumnHeaders = DefaultBoolean.False;
                 }
             }
+            else if (e.KeyData.HasFlag(Keys.Delete) && e.Shift)
+            {
+                BeginDataUpdate();
+                try
+                {
+                    var selectedRows = GetSelectedRows();
+
+                    for (var i = selectedRows.Length - 1; i >= 0; --i)
+                    {
+                        DeleteRow(selectedRows[i]);
+                    }
+                }
+                finally
+                {
+                    EndDataUpdate();
+                }
+            }
+            else if (e.KeyData == Keys.Delete)
+            {
+                foreach (var cell in GetSelectedCells())
+                {
+                    SetRowCellValue(cell.RowHandle, cell.Column, null);
+                }
+            }
         }
 
         /// <summary>

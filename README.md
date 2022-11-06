@@ -34,13 +34,14 @@
   3. Improvements to work with merged cells: correct odd/even color, applying user changes to merged cells;
   4. Correct multiple checked changes for 'bool' columns with multiple selected rows;
   5. Cache for FormatRules, in case of DataSource changing;
-  6. Auto-drawing histogram in a cell - just add keyword to a column Tag;
+  6. Auto-drawing histogram in a cell - just add keyword to a column Tag add set array of numbers in a grid cell;
   ``` csharp
   colHistogram.Tag = GridHelper.IsHistogramColumn;
   ``` 
   7. Provides fast way to fill a DataTable structure based on the GridView structure;
   8. Custom user column header colorizing. <p align="center"> <img src="DevExpressWinFormsExtension/Resources/Samples/GridControlSample.jpg" width="550" align="center" title="Grid control sample"> </p>   <p align="center"> <img src="DevExpressWinFormsExtension/Resources/Samples/GridHistogramSample.jpg" width="150" align="center" title="Screenshot of the in-place histogram"> </p> 
-  9. Export full GridView table as an image ('GetAsImage'). DevExpress allows to export as an image only visible part of GridView, this method helps to export it all.
+  9. Export full GridView table as an image ('GetAsImage'). DevExpress allows to export as an image only visible part of GridView, this method helps to export it all;
+  10. Hotkeys for collapsing/expanding groupped rows, copy to clipboard with/without column headers, fast remove/clear selected rows.
 ### ProgressManager
   Easy way to attach a ProgressBar to any XtraUserControl for long operations with user cancellation. <p align="center"> <img src="DevExpressWinFormsExtension/Resources/Samples/ProgressManagerSample.jpg" width="280" align="center" title="Screenshot of the progress for a custom control"> </p>
   ``` csharp
