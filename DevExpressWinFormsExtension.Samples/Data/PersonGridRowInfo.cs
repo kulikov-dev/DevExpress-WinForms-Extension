@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-namespace DevExpressWinFormsExtension.Samples.Data
+﻿namespace DevExpressWinFormsExtension.Samples.Data
 {
     /// <summary>
     /// Row info about test person
@@ -11,6 +9,11 @@ namespace DevExpressWinFormsExtension.Samples.Data
         /// Full name
         /// </summary>
         public string Name { get; set; }
+
+        /// <summary>
+        /// Department
+        /// </summary>
+        public string Department { get; set; }
 
         /// <summary>
         /// Average salary

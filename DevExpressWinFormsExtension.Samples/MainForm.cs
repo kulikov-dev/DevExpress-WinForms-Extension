@@ -55,14 +55,15 @@ namespace DevExpressWinFormsExtension.Samples
 
             var source = new List<PersonGridRowInfo>();
             var testFaker = new Faker();
-            for (var i = 0; i < 25; ++i)
+            for (var i = 0; i < 10; ++i)
             {
                 var item = new PersonGridRowInfo()
                 {
                     Name = testFaker.Name.FullName(),
                     AverageSalary = testFaker.Random.Double(1000, 15000),
                     IsValid = testFaker.Random.Bool(),
-                    Histogram = Enumerable.Repeat(0, 1000).Select(x => testFaker.Random.Double(0, 1000)).ToList()
+                    Histogram = Enumerable.Repeat(0, 1000).Select(enItem => testFaker.Random.Double(0, 1000)).ToList(),
+                    Department = testFaker.Random.Bool() ? "IT" : "Managment"
                 };
 
                 source.Add(item);
@@ -224,7 +225,12 @@ namespace DevExpressWinFormsExtension.Samples
             GridPainterDev.DisposePainter(bandedGridViewDev);
         }
 
-        private void simpleButton1_Click(object sender, EventArgs e)
+        /// <summary>
+        /// Event on button click on capturing screenshot
+        /// </summary>
+        /// <param name="sender"> Source </param>
+        /// <param name="e"> Parameters </param>
+        private void btnCaptureScreenshot_Click(object sender, EventArgs e)
         {
             ControlScreenshotCapture.GetScreenshot(this);
         }

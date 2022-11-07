@@ -64,7 +64,7 @@ namespace DevExpressWinFormsExtension.Samples
             this.cbDateType = new DevExpress.XtraEditors.ComboBoxEdit();
             this.xtraTabControl = new DevExpress.XtraTab.XtraTabControl();
             this.xtraTabPageEditors = new DevExpress.XtraTab.XtraTabPage();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnCaptureScreenshot = new DevExpress.XtraEditors.SimpleButton();
             this.btnShowPropertyGridControl = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
             this.xtraTabPageGrid = new DevExpress.XtraTab.XtraTabPage();
@@ -73,6 +73,7 @@ namespace DevExpressWinFormsExtension.Samples
             this.bandName = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
             this.colName = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.bandInfo = new DevExpress.XtraGrid.Views.BandedGrid.GridBand();
+            this.colDepartment = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.colAverageSalary = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.colIsValid = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.colHistogram = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
@@ -269,7 +270,7 @@ namespace DevExpressWinFormsExtension.Samples
             // 
             this.dateDoubleTrackBarControlDev.AutoMiddleDate = false;
             this.dateDoubleTrackBarControlDev.ButtonSize = new System.Drawing.Size(12, 26);
-            this.dateDoubleTrackBarControlDev.LeftDate = new System.DateTime(2021, 10, 31, 0, 0, 0, 0);
+            this.dateDoubleTrackBarControlDev.LeftDate = new System.DateTime(2021, 11, 7, 0, 0, 0, 0);
             this.dateDoubleTrackBarControlDev.LengthMinimum = 0;
             this.dateDoubleTrackBarControlDev.Location = new System.Drawing.Point(422, 11);
             this.dateDoubleTrackBarControlDev.MaxDateLimit = new System.DateTime(2022, 7, 26, 0, 0, 0, 0);
@@ -329,7 +330,7 @@ namespace DevExpressWinFormsExtension.Samples
             // 
             // xtraTabPageEditors
             // 
-            this.xtraTabPageEditors.Controls.Add(this.simpleButton1);
+            this.xtraTabPageEditors.Controls.Add(this.btnCaptureScreenshot);
             this.xtraTabPageEditors.Controls.Add(this.btnShowPropertyGridControl);
             this.xtraTabPageEditors.Controls.Add(this.labelControl8);
             this.xtraTabPageEditors.Controls.Add(this.labelControl1);
@@ -355,14 +356,14 @@ namespace DevExpressWinFormsExtension.Samples
             this.xtraTabPageEditors.Size = new System.Drawing.Size(687, 274);
             this.xtraTabPageEditors.Text = "Common editors";
             // 
-            // simpleButton1
+            // btnCaptureScreenshot
             // 
-            this.simpleButton1.Location = new System.Drawing.Point(13, 230);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(109, 23);
-            this.simpleButton1.TabIndex = 30;
-            this.simpleButton1.Text = "Capture screenshot";
-            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
+            this.btnCaptureScreenshot.Location = new System.Drawing.Point(13, 230);
+            this.btnCaptureScreenshot.Name = "btnCaptureScreenshot";
+            this.btnCaptureScreenshot.Size = new System.Drawing.Size(109, 23);
+            this.btnCaptureScreenshot.TabIndex = 30;
+            this.btnCaptureScreenshot.Text = "Capture screenshot";
+            this.btnCaptureScreenshot.Click += new System.EventHandler(this.btnCaptureScreenshot_Click);
             // 
             // btnShowPropertyGridControl
             // 
@@ -413,17 +414,27 @@ namespace DevExpressWinFormsExtension.Samples
             this.bandInfo});
             this.bandedGridViewDev.Columns.AddRange(new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn[] {
             this.colName,
+            this.colDepartment,
             this.colAverageSalary,
             this.colIsValid,
             this.colHistogram});
             this.bandedGridViewDev.GridControl = this.gridControlDev;
+            this.bandedGridViewDev.GroupCount = 1;
+            this.bandedGridViewDev.GroupFooterCellHeight = 3;
+            this.bandedGridViewDev.GroupSummary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Max, "AverageSalary", this.colAverageSalary, "MAX={0:f2}")});
             this.bandedGridViewDev.HistogramColor = System.Drawing.Color.CornflowerBlue;
             this.bandedGridViewDev.HistogramEmptyColor = System.Drawing.Color.DarkBlue;
             this.bandedGridViewDev.Name = "bandedGridViewDev";
             this.bandedGridViewDev.OptionsSelection.MultiSelect = true;
             this.bandedGridViewDev.OptionsSelection.MultiSelectMode = DevExpress.XtraGrid.Views.Grid.GridMultiSelectMode.CellSelect;
             this.bandedGridViewDev.OptionsView.ColumnAutoWidth = false;
+            this.bandedGridViewDev.OptionsView.GroupDrawMode = DevExpress.XtraGrid.Views.Grid.GroupDrawMode.Standard;
+            this.bandedGridViewDev.OptionsView.GroupFooterShowMode = DevExpress.XtraGrid.Views.Grid.GroupFooterShowMode.VisibleAlways;
             this.bandedGridViewDev.RowHeight = 40;
+            this.bandedGridViewDev.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
+            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.colDepartment, DevExpress.Data.ColumnSortOrder.Ascending),
+            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.colName, DevExpress.Data.ColumnSortOrder.Ascending)});
             // 
             // bandName
             // 
@@ -443,12 +454,19 @@ namespace DevExpressWinFormsExtension.Samples
             // bandInfo
             // 
             this.bandInfo.Caption = "Very long band description are placed here";
+            this.bandInfo.Columns.Add(this.colDepartment);
             this.bandInfo.Columns.Add(this.colAverageSalary);
             this.bandInfo.Columns.Add(this.colIsValid);
             this.bandInfo.Columns.Add(this.colHistogram);
             this.bandInfo.Name = "bandInfo";
             this.bandInfo.VisibleIndex = 1;
             this.bandInfo.Width = 350;
+            // 
+            // colDepartment
+            // 
+            this.colDepartment.Caption = "Department";
+            this.colDepartment.FieldName = "Department";
+            this.colDepartment.Name = "colDepartment";
             // 
             // colAverageSalary
             // 
@@ -457,6 +475,7 @@ namespace DevExpressWinFormsExtension.Samples
             this.colAverageSalary.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colAverageSalary.FieldName = "AverageSalary";
             this.colAverageSalary.Name = "colAverageSalary";
+            this.colAverageSalary.UnboundDataType = typeof(double);
             this.colAverageSalary.Visible = true;
             // 
             // colIsValid
@@ -472,6 +491,7 @@ namespace DevExpressWinFormsExtension.Samples
             this.colHistogram.FieldName = "Histogram";
             this.colHistogram.MinWidth = 150;
             this.colHistogram.Name = "colHistogram";
+            this.colHistogram.OptionsColumn.AllowEdit = false;
             this.colHistogram.Visible = true;
             this.colHistogram.Width = 200;
             // 
@@ -482,8 +502,8 @@ namespace DevExpressWinFormsExtension.Samples
             this.ClientSize = new System.Drawing.Size(689, 299);
             this.Controls.Add(this.xtraTabControl);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.IconOptions.ShowIcon = false;
             this.Name = "MainForm";
-            this.ShowIcon = false;
             this.Text = "DevExpressWinFormsExtension.Samples";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit.Properties.CalendarTimeProperties)).EndInit();
@@ -540,11 +560,12 @@ namespace DevExpressWinFormsExtension.Samples
         private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn colAverageSalary;
         private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn colIsValid;
         private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn colHistogram;
-        private DevExpress.XtraGrid.Views.BandedGrid.GridBand bandName;
-        private DevExpress.XtraGrid.Views.BandedGrid.GridBand bandInfo;
         private DevExpress.XtraEditors.SimpleButton btnShowPropertyGridControl;
         private DevExpress.XtraEditors.LabelControl labelControl8;
-        private DevExpress.XtraEditors.SimpleButton simpleButton1;
+        private DevExpress.XtraEditors.SimpleButton btnCaptureScreenshot;
+        private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn colDepartment;
+        private DevExpress.XtraGrid.Views.BandedGrid.GridBand bandName;
+        private DevExpress.XtraGrid.Views.BandedGrid.GridBand bandInfo;
     }
 }
 

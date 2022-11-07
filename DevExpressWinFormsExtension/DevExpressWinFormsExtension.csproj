@@ -98,6 +98,8 @@
     </Compile>
     <Compile Include="DataControls\GridView\Utils\BandedGridDevInfoRegistrator.cs" />
     <Compile Include="DataControls\GridView\Utils\GridViewDevInfoRegistrator.cs" />
+    <Compile Include="DataControls\GridView\Utils\BandedGridViewInfoDev.cs" />
+    <Compile Include="DataControls\GridView\Utils\GridViewInfoDev.cs" />
     <Compile Include="DataControls\LookUp\ILookUpSplitableItem.cs" />
     <Compile Include="DataControls\TreeList\Utils\TreeListSearchableDesigner.cs" />
     <Compile Include="Progress\ControlProgressHandler.cs" />

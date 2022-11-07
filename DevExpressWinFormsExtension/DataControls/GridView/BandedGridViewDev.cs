@@ -60,6 +60,11 @@ namespace DevExpressWinFormsExtension.DataControls.GridView
         private byte isConditionalRulesUpdating = 0;
 
         /// <summary>
+        /// Summary group row height
+        /// </summary>
+        private int groupFooterCellHeight = 1;
+
+        /// <summary>
         /// Parameterless constructor
         /// </summary>
         public BandedGridViewDev()
@@ -85,6 +90,25 @@ namespace DevExpressWinFormsExtension.DataControls.GridView
         /// Event on accuracy changed
         /// </summary>
         public event ChangingEventHandler ColumnFormatChanged;
+
+        /// <summary>
+        /// Summary group footer height
+        /// </summary>
+        [Browsable(true)]
+        [Category("Appearance")]
+        [Description("Summary group footer height")]
+        public int GroupFooterCellHeight
+        {
+            get
+            {
+                return groupFooterCellHeight;
+            }
+
+            set
+            {
+                groupFooterCellHeight = value < 1 ? 1 : value;
+            }
+        }
 
         /// <summary>
         /// Allow user set up format settings
@@ -161,7 +185,6 @@ namespace DevExpressWinFormsExtension.DataControls.GridView
             OptionsView.AllowHtmlDrawHeaders = true;
             OptionsView.EnableAppearanceEvenRow = true;
             OptionsView.HeaderFilterButtonShowMode = FilterButtonShowMode.SmartTag;
-            OptionsView.GroupFooterShowMode = GroupFooterShowMode.Hidden;
 
             OptionsMenu.EnableColumnMenu = true;
             OptionsMenu.ShowConditionalFormattingItem = true;
