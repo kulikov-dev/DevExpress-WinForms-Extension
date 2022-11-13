@@ -54,5 +54,15 @@ namespace DevExpressWinFormsExtension.DataControls.Extensions
                 }
             }
         }
+
+        public static void EnableLassoSelection(this ChartControl chartControl)
+        {
+            new ChartControlLassoProcessor(chartControl);
+        }
+
+        public static void DisableLassoSelection(this ChartControl chartControl)
+        {
+
+        }
     }
 }

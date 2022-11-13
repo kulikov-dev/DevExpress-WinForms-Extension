@@ -70,6 +70,7 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataControls\ColorPickEdit\ColorPickEditUtils.cs" />
@@ -111,6 +112,7 @@
     <Compile Include="Progress\ProgressControl.designer.cs">
       <DependentUpon>ProgressControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Utils\ChartControlLassoProcessor.cs" />
     <Compile Include="Utils\ColorExtension.cs" />
     <Compile Include="Utils\ControlScreenshotCapture.cs" />
     <Compile Include="Utils\FormHelper.cs" />
