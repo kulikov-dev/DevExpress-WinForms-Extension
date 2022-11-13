@@ -13,6 +13,11 @@ namespace DevExpressWinFormsExtension.DataControls.Extensions
     public static class ChartControlExtension
     {
         /// <summary>
+        /// Information about lasso processors
+        /// </summary>
+        private static Dictionary<ChartControl, ChartControlLassoProcessor> _chartControlLassoProcessors = new Dictionary<ChartControl, ChartControlLassoProcessor>();
+
+        /// <summary>
         /// Change the hue for series with the same color
         /// </summary>
         /// <param name="chartControl"> Chart control </param>
@@ -55,14 +60,28 @@ namespace DevExpressWinFormsExtension.DataControls.Extensions
             }
         }
 
+        /// <summary>
+        /// Enable lasso selection in a Chart
+        /// </summary>
+        /// <param name="chartControl"> Chart control </param>
         public static void EnableLassoSelection(this ChartControl chartControl)
         {
             new ChartControlLassoProcessor(chartControl);
         }
 
+        /// <summary>
+        /// Disable lasso selection in a Chart
+        /// </summary>
+        /// <param name="chartControl"> Chart control </param>
         public static void DisableLassoSelection(this ChartControl chartControl)
         {
+            if (!_chartControlLassoProcessors.ContainsKey(chartControl))
+            {
+                return;
+            }
 
+            _chartControlLassoProcessors[chartControl].Dispose();
+            _chartControlLassoProcessors.Remove(chartControl);
         }
     }
 }
