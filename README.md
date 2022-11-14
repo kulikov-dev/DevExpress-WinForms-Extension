@@ -66,7 +66,10 @@
 * BaseEditExtension. Contains method 'IsValueEmpty' which allows validating input data of each BaseEdit control for emptiness. If necessary, set up the background color of the control to warning color.
 * DateEditExtension. Contains method 'UpdateView' for DateEdit and RepositoryItemDateEdit to initialize the view of the control according to the datetime interval type. 
 * TreeListNodeExtension. Contains methods for correct processing of CheckState and Filtering for situations, when checkstate of the parent node depends on children and vice versa.
-* ChartControlExtension. Contains method 'ColorizeSameColoredSeries', allowing to auto-change a hue for series with the same color.
+* ChartControlExtension:
+  1. Contains method 'ColorizeSameColoredSeries', allowing to auto-change a hue for series with the same color;
+  2. Contains lasso processor which provides functionality to select/deselect points in Point Series with lasso tool. Uses hotkeys: ctrl+mouse - to select, shift+mouse - to deselect, double click to clear selection.
+  <p align="center"> <img src="DevExpressWinFormsExtension/Resources/Samples/ChartLassoSample.jpg" width="500" align="center" title="Screenshot of the lasso tool in ChartControl"> </p> 
 * PropertyGridControlExtension. Contains method 'UpdateFieldsOrderByDisplayOrder' to sort created rows after 'RetrieveFields' based on a System.ComponentModel.DataAnnotations.Order field (was fixed in v22 DevExpress).
   ``` csharp
     /// <summary>
