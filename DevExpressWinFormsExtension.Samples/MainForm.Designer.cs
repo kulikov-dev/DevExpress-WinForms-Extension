@@ -39,6 +39,9 @@ namespace DevExpressWinFormsExtension.Samples
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject2 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject3 = new DevExpress.Utils.SerializableAppearanceObject();
             DevExpress.Utils.SerializableAppearanceObject serializableAppearanceObject4 = new DevExpress.Utils.SerializableAppearanceObject();
+            DevExpress.XtraCharts.XYDiagram xyDiagram1 = new DevExpress.XtraCharts.XYDiagram();
+            DevExpress.XtraCharts.Series series1 = new DevExpress.XtraCharts.Series();
+            DevExpress.XtraCharts.PointSeriesView pointSeriesView1 = new DevExpress.XtraCharts.PointSeriesView();
             this.dateEdit = new DevExpress.XtraEditors.DateEdit();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.btnShowInputBox = new DevExpress.XtraEditors.SimpleButton();
@@ -77,6 +80,8 @@ namespace DevExpressWinFormsExtension.Samples
             this.colAverageSalary = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.colIsValid = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.colHistogram = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
+            this.xtraTabPageChart = new DevExpress.XtraTab.XtraTabPage();
+            this.chartControl = new DevExpress.XtraCharts.ChartControl();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.maskTextEdit.Properties)).BeginInit();
@@ -93,6 +98,11 @@ namespace DevExpressWinFormsExtension.Samples
             this.xtraTabPageGrid.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlDev)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bandedGridViewDev)).BeginInit();
+            this.xtraTabPageChart.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chartControl)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(xyDiagram1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(series1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(pointSeriesView1)).BeginInit();
             this.SuspendLayout();
             // 
             // dateEdit
@@ -270,7 +280,7 @@ namespace DevExpressWinFormsExtension.Samples
             // 
             this.dateDoubleTrackBarControlDev.AutoMiddleDate = false;
             this.dateDoubleTrackBarControlDev.ButtonSize = new System.Drawing.Size(12, 26);
-            this.dateDoubleTrackBarControlDev.LeftDate = new System.DateTime(2021, 11, 7, 0, 0, 0, 0);
+            this.dateDoubleTrackBarControlDev.LeftDate = new System.DateTime(2021, 11, 14, 0, 0, 0, 0);
             this.dateDoubleTrackBarControlDev.LengthMinimum = 0;
             this.dateDoubleTrackBarControlDev.Location = new System.Drawing.Point(422, 11);
             this.dateDoubleTrackBarControlDev.MaxDateLimit = new System.DateTime(2022, 7, 26, 0, 0, 0, 0);
@@ -326,7 +336,8 @@ namespace DevExpressWinFormsExtension.Samples
             this.xtraTabControl.TabIndex = 28;
             this.xtraTabControl.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.xtraTabPageEditors,
-            this.xtraTabPageGrid});
+            this.xtraTabPageGrid,
+            this.xtraTabPageChart});
             // 
             // xtraTabPageEditors
             // 
@@ -495,6 +506,29 @@ namespace DevExpressWinFormsExtension.Samples
             this.colHistogram.Visible = true;
             this.colHistogram.Width = 200;
             // 
+            // xtraTabPageChart
+            // 
+            this.xtraTabPageChart.Controls.Add(this.chartControl);
+            this.xtraTabPageChart.Name = "xtraTabPageChart";
+            this.xtraTabPageChart.Size = new System.Drawing.Size(687, 274);
+            this.xtraTabPageChart.Text = "Chart";
+            // 
+            // chartControl
+            // 
+            xyDiagram1.AxisX.VisibleInPanesSerializable = "-1";
+            xyDiagram1.AxisY.VisibleInPanesSerializable = "-1";
+            this.chartControl.Diagram = xyDiagram1;
+            this.chartControl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.chartControl.Legend.Visibility = DevExpress.Utils.DefaultBoolean.False;
+            this.chartControl.Location = new System.Drawing.Point(0, 0);
+            this.chartControl.Name = "chartControl";
+            series1.Name = "TestSerie";
+            series1.View = pointSeriesView1;
+            this.chartControl.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
+        series1};
+            this.chartControl.Size = new System.Drawing.Size(687, 274);
+            this.chartControl.TabIndex = 0;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -523,6 +557,11 @@ namespace DevExpressWinFormsExtension.Samples
             this.xtraTabPageGrid.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControlDev)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bandedGridViewDev)).EndInit();
+            this.xtraTabPageChart.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(xyDiagram1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(pointSeriesView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(series1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartControl)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -566,6 +605,8 @@ namespace DevExpressWinFormsExtension.Samples
         private DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn colDepartment;
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand bandName;
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand bandInfo;
+        private DevExpress.XtraTab.XtraTabPage xtraTabPageChart;
+        private DevExpress.XtraCharts.ChartControl chartControl;
     }
 }
 

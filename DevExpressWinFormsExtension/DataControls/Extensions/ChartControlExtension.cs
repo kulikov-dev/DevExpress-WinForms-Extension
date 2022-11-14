@@ -15,7 +15,7 @@ namespace DevExpressWinFormsExtension.DataControls.Extensions
         /// <summary>
         /// Information about lasso processors
         /// </summary>
-        private static Dictionary<ChartControl, ChartControlLassoProcessor> _chartControlLassoProcessors = new Dictionary<ChartControl, ChartControlLassoProcessor>();
+        private static readonly Dictionary<ChartControl, ChartControlLassoProcessor> _chartControlLassoProcessors = new Dictionary<ChartControl, ChartControlLassoProcessor>();
 
         /// <summary>
         /// Change the hue for series with the same color
@@ -64,9 +64,12 @@ namespace DevExpressWinFormsExtension.DataControls.Extensions
         /// Enable lasso selection in a Chart
         /// </summary>
         /// <param name="chartControl"> Chart control </param>
-        public static void EnableLassoSelection(this ChartControl chartControl)
+        /// <param name="selectionColor"> Selection lasso color </param>
+        /// <param name="deselectionColor"> Deselection lasso color </param>
+        /// <param name="penWidth"> Lasso pen width </param>
+        public static void EnableLassoSelection(this ChartControl chartControl, Color selectionColor = default, Color deselectionColor = default, float penWidth = 2)
         {
-            new ChartControlLassoProcessor(chartControl);
+            new ChartControlLassoProcessor(chartControl, selectionColor, deselectionColor, penWidth);
         }
 
         /// <summary>

@@ -31,6 +31,7 @@ namespace DevExpressWinFormsExtension.Samples
             InitLookUp();
             InitTreeList();
             InitGrid();
+            InitChart();
             InitSkins();
 
             maskTextEdit.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
@@ -74,6 +75,20 @@ namespace DevExpressWinFormsExtension.Samples
             //// For merging a band and a caption titles
             new GridPainterDev(bandedGridViewDev);
             bandedGridViewDev.BestFitBands();
+        }
+
+        /// <summary>
+        /// Initialize chart
+        /// </summary>
+        private void InitChart()
+        {
+            chartControl.EnableLassoSelection();
+
+            var testFaker = new Faker();
+            for (var i = 0; i < 30; ++i)
+            {
+                chartControl.Series[0].Points.Add(new DevExpress.XtraCharts.SeriesPoint(testFaker.Random.Int(10, 500), testFaker.Random.Int(10, 500)));
+            }
         }
 
         /// <summary>
@@ -212,6 +227,7 @@ namespace DevExpressWinFormsExtension.Samples
         /// <param name="e"> Parameters </param>
         private void Application_ApplicationExit(object sender, EventArgs e)
         {
+            chartControl.DisableLassoSelection();
             SolidBrushesCache.Dispose();
         }
 
