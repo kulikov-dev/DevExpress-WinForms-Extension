@@ -40,20 +40,26 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="DevExpress.Charts.v19.1.Core, Version=19.1.15.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="DevExpress.Data.v19.1, Version=19.1.15.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.Utils.v19.1, Version=19.1.15.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.XtraBars.v19.1, Version=19.1.15.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.XtraCharts.v19.1, Version=19.1.15.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.XtraCharts.v19.1.Extensions, Version=19.1.15.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.XtraCharts.v19.1.UI, Version=19.1.15.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.XtraEditors.v19.1, Version=19.1.15.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.XtraGrid.v19.1, Version=19.1.15.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
-    <Reference Include="DevExpress.XtraTreeList.v19.1, Version=19.1.15.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Charts.v22.1.Core, Version=22.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Drawing.v22.1, Version=22.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Printing.v22.1.Core, Version=22.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Data.v22.1, Version=22.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Data.Desktop.v22.1, Version=22.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v22.1, Version=22.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraBars.v22.1, Version=22.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v22.1, Version=22.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v22.1.Extensions, Version=22.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v22.1.UI, Version=22.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v22.1, Version=22.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGrid.v22.1, Version=22.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPrinting.v22.1, Version=22.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraTreeList.v22.1, Version=22.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraVerticalGrid.v22.1, Version=22.1.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="LRUCache">
       <HintPath>..\..\LRUCache\src\LRUCache\bin\Debug\LRUCache.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Design" />
     <Reference Include="System.Drawing" />
@@ -64,10 +70,12 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataControls\ColorPickEdit\ColorPickEditUtils.cs" />
     <Compile Include="DataControls\Extensions\GridViewExtension.cs" />
+    <Compile Include="DataControls\Extensions\PropertyGridControlExtension.cs" />
     <Compile Include="DataControls\GridView\BandedGridViewDev.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -80,6 +88,7 @@
     <Compile Include="DataControls\GridView\GridControlDev.designer.cs">
       <DependentUpon>GridControlDev.cs</DependentUpon>
     </Compile>
+    <Compile Include="DataControls\GridView\HistogramData.cs" />
     <Compile Include="DataControls\GridView\Utils\GridHelper.cs" />
     <Compile Include="DataControls\GridView\Utils\GridPainterDev.cs" />
     <Compile Include="DataControls\GridView\GridViewDev.cs">
@@ -90,6 +99,9 @@
     </Compile>
     <Compile Include="DataControls\GridView\Utils\BandedGridDevInfoRegistrator.cs" />
     <Compile Include="DataControls\GridView\Utils\GridViewDevInfoRegistrator.cs" />
+    <Compile Include="DataControls\GridView\Utils\BandedGridViewInfoDev.cs" />
+    <Compile Include="DataControls\GridView\Utils\GridViewInfoDev.cs" />
+    <Compile Include="DataControls\LookUp\ILookUpSplitableItem.cs" />
     <Compile Include="DataControls\TreeList\Utils\TreeListSearchableDesigner.cs" />
     <Compile Include="Progress\ControlProgressHandler.cs" />
     <Compile Include="Progress\IProgressControlHandler.cs" />
@@ -100,10 +112,15 @@
     <Compile Include="Progress\ProgressControl.designer.cs">
       <DependentUpon>ProgressControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Utils\ChartControlLassoProcessor.cs" />
     <Compile Include="Utils\ColorExtension.cs" />
+    <Compile Include="Utils\ControlScreenshotCapture.cs" />
+    <Compile Include="Utils\FormHelper.cs" />
+    <Compile Include="Utils\MDITabsDragHelper.cs" />
+    <Compile Include="Utils\NaturalStringComparer.cs" />
     <Compile Include="Utils\RegexMaskHelper.cs" />
     <Compile Include="Utils\SolidBrushesCache.cs" />
-    <Compile Include="DataControls\Forms\Utils\XtraUserControlHelper.cs" />
+    <Compile Include="Utils\XtraUserControlHelper.cs" />
     <Compile Include="DataControls\PasswordTextEditDev.cs">
       <SubType>Component</SubType>
     </Compile>
