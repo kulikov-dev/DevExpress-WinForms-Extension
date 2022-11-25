@@ -12,7 +12,8 @@
 * InputBoxValidableDev. InputBox with possibility of using custom function for user input validation. <p align="center"> <img src="DevExpressWinFormsExtension/Resources/Samples/InputBoxValidableSample.jpg" width="250" align="center" title="Screenshot of the InputBoxValidable"> </p>
 * GroupControlCheckedDev. GroupControl with checkbox in header, allows user to disable/enable all controls in the GroupControl. <p align="center"> <img src="DevExpressWinFormsExtension/Resources/Samples/GroupControlCheckedSample.jpg" width="250" align="center" title="Screenshot of the GroupControlChecked"> </p>
 * MatrixGridControl and MdiManagerHelper. Use together to provide users the ability to conveniently and quickly arrange MDI forms;
-<p align="center"> <img src="DevExpressWinFormsExtension/Resources/Samples/MDISample.jpg" width="450" align="center" title="Screenshot of the GroupControlChecked"> </p>
+<p align="center"> <img src="DevExpressWinFormsExtension/Resources/Samples/MDISample.jpg" width="450" align="center" title="Screenshot of the MDI matrix control"> </p>
+
 * LookUpDev, RepositoryItemLookUpDev. The extensions for the standard component which supports:
   1. Show hints for each element in an editor;
   2. Draw splitter between elements (for example, to realize LRU spiltting). Just add interface to your DataSource item:
