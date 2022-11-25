@@ -103,6 +103,13 @@
     <Compile Include="DataControls\GridView\Utils\GridViewInfoDev.cs" />
     <Compile Include="DataControls\LookUp\ILookUpSplitableItem.cs" />
     <Compile Include="DataControls\TreeList\Utils\TreeListSearchableDesigner.cs" />
+    <Compile Include="Utils\MdiManager\MatrixGridControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Utils\MdiManager\MatrixGridControl.Designer.cs">
+      <DependentUpon>MatrixGridControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Utils\MdiManager\MdiManagerHelper.cs" />
     <Compile Include="Progress\ControlProgressHandler.cs" />
     <Compile Include="Progress\IProgressControlHandler.cs" />
     <Compile Include="Progress\ProgressManager.cs" />
@@ -219,6 +226,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DataControls\GroupControlCheckedDev.resx">
       <DependentUpon>GroupControlCheckedDev.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Utils\MdiManager\MatrixGridControl.resx">
+      <DependentUpon>MatrixGridControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Progress\ProgressControl.resx">
       <DependentUpon>ProgressControl.cs</DependentUpon>

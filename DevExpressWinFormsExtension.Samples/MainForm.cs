@@ -13,6 +13,7 @@ using DevExpressWinFormsExtension.DataControls.GridView.Utils;
 using Bogus;
 using System.Linq;
 using DevExpress.XtraVerticalGrid;
+using DevExpressWinFormsExtension.Samples.Forms;
 
 namespace DevExpressWinFormsExtension.Samples
 {
@@ -249,6 +250,17 @@ namespace DevExpressWinFormsExtension.Samples
         private void btnCaptureScreenshot_Click(object sender, EventArgs e)
         {
             ControlScreenshotCapture.GetScreenshot(this);
+        }
+
+        /// <summary>
+        /// Event on button click on MDI sample
+        /// </summary>
+        /// <param name="sender"> Source </param>
+        /// <param name="e"> Parameters </param>
+        private void btnTabbedMDI_Click(object sender, EventArgs e)
+        {
+            var form = new ParentMDIForm();
+            form.Show();
         }
     }
 }

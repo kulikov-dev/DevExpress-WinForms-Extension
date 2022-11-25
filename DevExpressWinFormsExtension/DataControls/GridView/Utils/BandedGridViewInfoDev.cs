@@ -15,7 +15,7 @@
         }
 
         /// <summary>
-        /// Высота строки-сумматора группы
+        /// Custom group footer height
         /// </summary>
         public override int GroupFooterCellHeight
         {

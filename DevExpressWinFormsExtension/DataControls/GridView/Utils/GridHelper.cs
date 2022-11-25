@@ -1,12 +1,9 @@
 ﻿using DevExpress.Data;
-using DevExpress.Utils;
 using DevExpress.XtraGrid.Columns;
 using DevExpress.XtraGrid.Views.BandedGrid;
 using DevExpress.XtraGrid.Views.Base;
-using DevExpress.XtraGrid.Views.Grid;
 using DevExpress.XtraGrid.Views.Grid.ViewInfo;
 using DevExpress.XtraPrinting;
-using DevExpress.XtraRichEdit;
 using DevExpressWinFormsExtension.Utils;
 using System;
 using System.Collections.Generic;

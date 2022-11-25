@@ -67,6 +67,7 @@ namespace DevExpressWinFormsExtension.Samples
             this.cbDateType = new DevExpress.XtraEditors.ComboBoxEdit();
             this.xtraTabControl = new DevExpress.XtraTab.XtraTabControl();
             this.xtraTabPageEditors = new DevExpress.XtraTab.XtraTabPage();
+            this.btnMDIManagerHelper = new DevExpress.XtraEditors.SimpleButton();
             this.btnCaptureScreenshot = new DevExpress.XtraEditors.SimpleButton();
             this.btnShowPropertyGridControl = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
@@ -82,8 +83,8 @@ namespace DevExpressWinFormsExtension.Samples
             this.colHistogram = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridColumn();
             this.xtraTabPageChart = new DevExpress.XtraTab.XtraTabPage();
             this.chartControl = new DevExpress.XtraCharts.ChartControl();
-            ((System.ComponentModel.ISupportInitialize)(this.dateEdit.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateEdit.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.maskTextEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lookUpDev.Properties)).BeginInit();
             this.treeListSearchable.SuspendLayout();
@@ -267,20 +268,20 @@ namespace DevExpressWinFormsExtension.Samples
             // passwordTextEditDev
             // 
             this.passwordTextEditDev.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.passwordTextEditDev.Location = new System.Drawing.Point(128, 37);
+            this.passwordTextEditDev.Location = new System.Drawing.Point(132, 37);
             this.passwordTextEditDev.Name = "passwordTextEditDev";
             editorButtonImageOptions1.Image = ((System.Drawing.Image)(resources.GetObject("editorButtonImageOptions1.Image")));
             this.passwordTextEditDev.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), serializableAppearanceObject1, serializableAppearanceObject2, serializableAppearanceObject3, serializableAppearanceObject4, "Show password", "Visible", null, DevExpress.Utils.ToolTipAnchor.Default)});
             this.passwordTextEditDev.Properties.PasswordChar = '*';
-            this.passwordTextEditDev.Size = new System.Drawing.Size(279, 24);
+            this.passwordTextEditDev.Size = new System.Drawing.Size(275, 24);
             this.passwordTextEditDev.TabIndex = 7;
             // 
             // dateDoubleTrackBarControlDev
             // 
             this.dateDoubleTrackBarControlDev.AutoMiddleDate = false;
             this.dateDoubleTrackBarControlDev.ButtonSize = new System.Drawing.Size(12, 26);
-            this.dateDoubleTrackBarControlDev.LeftDate = new System.DateTime(2021, 11, 14, 0, 0, 0, 0);
+            this.dateDoubleTrackBarControlDev.LeftDate = new System.DateTime(2021, 11, 20, 0, 0, 0, 0);
             this.dateDoubleTrackBarControlDev.LengthMinimum = 0;
             this.dateDoubleTrackBarControlDev.Location = new System.Drawing.Point(422, 11);
             this.dateDoubleTrackBarControlDev.MaxDateLimit = new System.DateTime(2022, 7, 26, 0, 0, 0, 0);
@@ -332,7 +333,7 @@ namespace DevExpressWinFormsExtension.Samples
             this.xtraTabControl.Location = new System.Drawing.Point(0, 0);
             this.xtraTabControl.Name = "xtraTabControl";
             this.xtraTabControl.SelectedTabPage = this.xtraTabPageEditors;
-            this.xtraTabControl.Size = new System.Drawing.Size(689, 299);
+            this.xtraTabControl.Size = new System.Drawing.Size(689, 338);
             this.xtraTabControl.TabIndex = 28;
             this.xtraTabControl.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.xtraTabPageEditors,
@@ -341,6 +342,7 @@ namespace DevExpressWinFormsExtension.Samples
             // 
             // xtraTabPageEditors
             // 
+            this.xtraTabPageEditors.Controls.Add(this.btnMDIManagerHelper);
             this.xtraTabPageEditors.Controls.Add(this.btnCaptureScreenshot);
             this.xtraTabPageEditors.Controls.Add(this.btnShowPropertyGridControl);
             this.xtraTabPageEditors.Controls.Add(this.labelControl8);
@@ -364,8 +366,17 @@ namespace DevExpressWinFormsExtension.Samples
             this.xtraTabPageEditors.Controls.Add(this.lookUpDev);
             this.xtraTabPageEditors.Controls.Add(this.labelControl3);
             this.xtraTabPageEditors.Name = "xtraTabPageEditors";
-            this.xtraTabPageEditors.Size = new System.Drawing.Size(687, 274);
+            this.xtraTabPageEditors.Size = new System.Drawing.Size(687, 313);
             this.xtraTabPageEditors.Text = "Common editors";
+            // 
+            // btnMDIManagerHelper
+            // 
+            this.btnMDIManagerHelper.Location = new System.Drawing.Point(11, 259);
+            this.btnMDIManagerHelper.Name = "btnMDIManagerHelper";
+            this.btnMDIManagerHelper.Size = new System.Drawing.Size(109, 23);
+            this.btnMDIManagerHelper.TabIndex = 31;
+            this.btnMDIManagerHelper.Text = "MDI manager sample";
+            this.btnMDIManagerHelper.Click += new System.EventHandler(this.btnTabbedMDI_Click);
             // 
             // btnCaptureScreenshot
             // 
@@ -397,7 +408,7 @@ namespace DevExpressWinFormsExtension.Samples
             // 
             this.xtraTabPageGrid.Controls.Add(this.gridControlDev);
             this.xtraTabPageGrid.Name = "xtraTabPageGrid";
-            this.xtraTabPageGrid.Size = new System.Drawing.Size(687, 274);
+            this.xtraTabPageGrid.Size = new System.Drawing.Size(687, 313);
             this.xtraTabPageGrid.Text = "GridControl";
             // 
             // gridControlDev
@@ -406,7 +417,7 @@ namespace DevExpressWinFormsExtension.Samples
             this.gridControlDev.Location = new System.Drawing.Point(0, 0);
             this.gridControlDev.MainView = this.bandedGridViewDev;
             this.gridControlDev.Name = "gridControlDev";
-            this.gridControlDev.Size = new System.Drawing.Size(687, 274);
+            this.gridControlDev.Size = new System.Drawing.Size(687, 313);
             this.gridControlDev.TabIndex = 0;
             this.gridControlDev.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.bandedGridViewDev});
@@ -510,7 +521,7 @@ namespace DevExpressWinFormsExtension.Samples
             // 
             this.xtraTabPageChart.Controls.Add(this.chartControl);
             this.xtraTabPageChart.Name = "xtraTabPageChart";
-            this.xtraTabPageChart.Size = new System.Drawing.Size(687, 274);
+            this.xtraTabPageChart.Size = new System.Drawing.Size(687, 313);
             this.xtraTabPageChart.Text = "Chart";
             // 
             // chartControl
@@ -526,17 +537,18 @@ namespace DevExpressWinFormsExtension.Samples
             series1.View = pointSeriesView1;
             this.chartControl.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
         series1};
-            this.chartControl.Size = new System.Drawing.Size(687, 274);
+            this.chartControl.Size = new System.Drawing.Size(687, 313);
             this.chartControl.TabIndex = 0;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(689, 299);
+            this.ClientSize = new System.Drawing.Size(689, 338);
             this.Controls.Add(this.xtraTabControl);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.IconOptions.ShowIcon = false;
+            this.IsMdiContainer = true;
             this.Name = "MainForm";
             this.Text = "DevExpressWinFormsExtension.Samples";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
@@ -607,6 +619,7 @@ namespace DevExpressWinFormsExtension.Samples
         private DevExpress.XtraGrid.Views.BandedGrid.GridBand bandInfo;
         private DevExpress.XtraTab.XtraTabPage xtraTabPageChart;
         private DevExpress.XtraCharts.ChartControl chartControl;
+        private DevExpress.XtraEditors.SimpleButton btnMDIManagerHelper;
     }
 }
 
